@@ -1,32 +1,34 @@
 /*
-Theme Name: Twenty Twelve Dark
-Theme URI: http://zeaks.org
-Description: A Dark color scheme of 2012 WordPress theme based on Twenty Eleven Dark.
-Author: Zeaks
-Author url: http://zeaks.org/
+Theme Name: Twenty Twelve Evening Red
+Theme URI: http://n3wjack.net
+Description: A dark color scheme of 2012 WordPress theme based on Twenty Eleven Dark by Zeaks.
+Author: n3wjack.net
+Author url: http://n3wjack.net/
 Version: 1.0
-Tags: black, blue, white, fixed-width, custom-header, theme-options
+Tags: black, red, white, fixed-width, custom-header, theme-options
 Template: twentytwelve
 */
 @import url('../twentytwelve/style.css');
 
 /*
-	A dark color scheme for Twenty Twelve
+	A dark color scheme for Twenty Twelve started from Zeaks @ http://zeaks.org.
+    licensed under the GPL.
 */
 
-/* Global
+/* =Global
 ----------------------------------------------- */
+
 a {
-	color: #1FA7E4; 
+	color: #cccccc; 
 }
 a:hover {
-	color: #1FA7E4;
+	color: #e41f1f;
 }
 .site-header h1 a,.site-header h2  a,.site-header h2{
-    color: #CCCCCC;
+    color: #cccccc;
 }
 .site-header h1 a:hover, .site-header h2 a:hover {
-    color: #1FA7E4;
+    color: #ffffff;
 }
 body.custom-background, body {
 	background: #1d1d1d;
@@ -56,16 +58,22 @@ article.format-aside .aside {
     background: none repeat scroll 0 0 #EEEEEE;
     border-left: 22px solid #333333;
 }
+.entry-title:before {
+    content: "// ";
+}
+.entry-title, .entry-title a {
+    color: #ffffff;
+}
 .entry-title a:hover {
-	text-decoration:underline;
+	text-decoration:none;
 }
 .entry-content a:hover, .entry-summary a:hover, .comment-content a:hover, .site-content nav a:hover, #respond form a:hover {
 	text-decoration: underline;
-	color: #efefef;
+	color: #e41f1f;
 }
 .entry-content a, .entry-summary a, .comment-content a, .site-content nav a, #respond form a {
 	text-decoration:none;
-	color: #1FA7E4;
+	color: #ffffff;
 }
 .comments-link a, .entry-meta a, li.bypostauthor cite span {
 	border-radius: 3px 3px 3px 3px;
@@ -74,26 +82,22 @@ article.format-aside .aside {
 	padding: 2px 5px;
 	text-decoration: none;
 	background-color: #222222;
-	color: #1FA7E4;
+	color: #ffffff;
 	border: none;
 }
 .comments-link a:hover, .entry-meta a:hover{ 
-	color: #efefef;
-}
-.entry-title a:hover {
-    text-decoration: underline;
-	color: #efefef;
+	color: #e41f1f;
 }
 .widget-area  .widget a:hover, footer[role="contentinfo"] a:hover  {
-	color: #1FA7E4;
+	color: #e41f1f;
 }
 footer[role="contentinfo"] a {
-	color: #CCCCCC;
+	color: #ffffff;
 }
 .credits {
 	float: right;
 }  
-/* Menu
+/* =Menu
 ----------------------------------------------- */
 
 .main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {
@@ -169,7 +173,7 @@ a:active img[class*="wp-image-"] {
 }
 
 
-/* Status
+/* =Status
 ----------------------------------------------- */
 
 .format-status img.avatar {
@@ -178,7 +182,7 @@ a:active img[class*="wp-image-"] {
 	box-shadow: 0 1px 2px #333;
 }
 
-/* error404
+/* =error404
 ----------------------------------------------- */
 .error404 #main #searchform {
 	background: #060606;
@@ -186,7 +190,7 @@ a:active img[class*="wp-image-"] {
 }
 
 
-/* Attachments
+/* =Attachments
 ----------------------------------------------- */
 
 .image-attachment div.attachment {
@@ -204,9 +208,11 @@ a:active img[class*="wp-image-"] {
 }
 
 
-/* Widgets
+/* =Widgets
 ----------------------------------------------- */
-
+.widget-title:before {
+	content: "// ";
+}
 .widget-title {
 	color: #ccc ;
 }
@@ -241,7 +247,7 @@ a:active img[class*="wp-image-"] {
 	border-color: #333;
 }
 
-/* Comments
+/* =Comments
 ----------------------------------------------- */
 
 /* Comment Form */
@@ -263,7 +269,7 @@ a:active img[class*="wp-image-"] {
 }
 #respond .comment-form-author .required,
 #respond .comment-form-email .required {
-	color: #42caff;
+	color: #e41f1f;
 }
 #respond input#submit {
 	color: #111;
@@ -294,13 +300,13 @@ a:active img[class*="wp-image-"] {
 
 a.comment-reply-link, .edit-link  a{
     border-radius: 2px 2px 2px 2px;
-    color: #1FA7E4;
+    color: #ffffff;
     padding: 2px 5px;
     text-decoration: none;
 	background-color: #222222;
 }
 .edit-link a:hover, a.comment-reply-link:hover  { 
-	color:#efefef ;
+	color:#efefef;
 }
 .commentlist .avatar {
     border-radius: 3px 3px 3px 3px;
