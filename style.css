@@ -30,6 +30,15 @@ a:hover {
 .site-header h1 a:hover, .site-header h2 a:hover {
     color: #ffffff;
 }
+.site-title:before {
+    content: "// ";
+}
+.site-description:before {
+    content: "/* ";
+}
+.site-description:after {
+    content: " */";
+}
 body.custom-background, body {
 	background: #1d1d1d;
 	color: #BBBBBB ;
