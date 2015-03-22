@@ -6,9 +6,10 @@ Description: The Gruseltour Leipzig theme based on http://zeaks.org/ Twenty Twel
 Author: Sebastian
 Author url: http://gruseltour-leipzig.de
 Version: 1.0
-Tags: black, blue, white, fixed-width, custom-header, theme-options
+Tags: gruseltour, black, blue, white, fixed-width, custom-header, theme-options
 Template: twentytwelve
 */
+@import url('gruseltour.css');
 
 /*
 	The Gruseltour Leipzig theme
