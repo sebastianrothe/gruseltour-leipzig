@@ -1,0 +1,132 @@
+/* Silbentrennung deaktivieren */
+.site-content article,
+.widget-area .widget {
+	word-wrap: normal !important;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	hyphens: none;
+}
+
+/* linker und rechter Abstand verringern */
+/* vorher 40px und 2.857142857rem */
+/* Minimum width of 960 pixels. */
+@media screen and (min-width: 960px) {
+	body .site {
+		padding: 0 20px !important;
+		padding: 0 1.428571428rem !important;
+	}
+}
+
+/* vorher 960px und 68.571428571rem */
+@media screen and (min-width: 600px) {
+	.site {
+		max-width: 1024px !important;
+		max-width: 75.571428571rem !important;
+	}
+}
+
+/* Gruseltour Styles */
+.header-image {
+ 	margin-top: 0;
+}
+
+/* Datepicker */
+.ui-datepicker-unselectable.ui-datepicker-tour-full {
+	background: red;
+}
+
+.ui-datepicker-readonly {
+	background: white;
+	cursor: pointer;
+}
+
+/* Formular */
+form input {
+	font-size: 1em;
+}
+
+/* Buchen-Button */
+.buchen-div {
+	position: fixed;
+	border: 1px solid #fff;
+	background-color: #fdfdfd;
+	bottom: 0;
+	right: 0;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-up: 10px;
+	padding-left: 12px;
+	border-radius: 2px 0 0 2px;
+	-moz-border-radius: 2px 0 0 2px;
+	-webkit-border-radius: 2px 0 0 2px;
+	-moz-box-shadow: 0 0 5px #fff;
+	-webkit-box-shadow: 0 0 5px#fff;
+	box-shadow: 0 0 5px #fff;
+}
+
+.buchen-div:hover {
+	-moz-box-shadow: 0 0 20px #fff;
+	-webkit-box-shadow: 0 0 20px#fff;
+	box-shadow: 0 0 20px #fff;
+}
+
+.buchen-div a.buchen-button {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+/* Slideshow */
+#slideshow {
+	height: 400px;
+	width: 100%;
+	background-color: #000;
+	position: relative;
+}
+
+#slideshow figure {
+	margin: 0;
+}
+
+#slideshow img {
+	max-height: 400px;
+	width: auto;
+	z-index: 8;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#slideshow IMG.active {
+	z-index: 10;
+	opacity: 1;
+}
+
+#slideshow IMG.last-active {
+	z-index: 9;
+}
+
+#slideshow figcaption {
+	color: white;
+	position: absolute;
+	bottom: 0;
+	z-index: 9;
+	opacity: 0;
+	background: #000;
+	width: 100%;
+	text-align: center;
+	font-size: 1.3em;
+	font-style: italic;
+}
+
+#slideshow figcaption.active {
+	z-index: 11;
+	opacity: .5;
+}
+
+#slideshow figcaption.last-active {
+	z-index: 10;
+}
