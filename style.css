@@ -1,45 +1,36 @@
+@@ -0,0 +1,366 @@
 /*
-Theme Name: Twenty Twelve Evening Red
-Theme URI: http://n3wjack.net
-Description: A dark color scheme of 2012 WordPress theme based on Twenty Eleven Dark by Zeaks.
-Author: n3wjack.net
-Author url: http://n3wjack.net/
+Theme Name: Twenty Twelve Dark
+Theme URI: http://zeaks.org
+Description: A Dark color scheme of 2012 WordPress theme based on Twenty Eleven Dark.
+Author: Zeaks
+Author url: http://zeaks.org/
 Version: 1.0
-Tags: black, red, white, fixed-width, custom-header, theme-options
+Tags: black, blue, white, fixed-width, custom-header, theme-options
 Template: twentytwelve
 */
+@import url('../twentytwelve/style.css');
 
 /*
-	A dark color scheme for Twenty Twelve started from Zeaks @ http://zeaks.org.
-    licensed under the GPL.
+	A dark color scheme for Twenty Twelve
 */
 
-/* =Global
+/* Global
 ----------------------------------------------- */
-
 a {
-	color: #ccc; 
+	color: #1FA7E4; 
 }
 a:hover {
-	color: #e41f1f;
+	color: #1FA7E4;
 }
 a:visited {
-    color: #ccc;
+    color: #1FA7E4;
 }
 .site-header h1 a,.site-header h2  a,.site-header h2{
-    color: #cccccc;
+    color: #CCC;
 }
-.site-header h1 a:hover, .site-header h2 a:hover, .site-header a:visited {
-    color: #fff;
-}
-.site-title:before {
-    content: "// ";
-}
-.site-description:before {
-    content: "/* ";
-}
-.site-description:after {
-    content: " */";
+.site-header h1 a:hover, .site-header h2 a:hover, .site-header a:visited { {
+    color: #1FA7E4;
 }
 body.custom-background, body {
 	background: #1d1d1d;
@@ -69,26 +60,19 @@ article.format-aside .aside {
     background: none repeat scroll 0 0 #EEEEEE;
     border-left: 22px solid #333333;
 }
-.entry-title:before {
-    content: "// ";
-}
-.entry-title, .entry-title a {
-    color: #ffffff;
-}
 .entry-title a:hover {
 	text-decoration:none;
 }
 .entry-content a:visited, .entry-summary a:visited, .comment-content a:visited, .site-content nav a:visited, #respond form a:visited {
 	text-decoration:none;
-	color: #fff;
 }
 .entry-content a:hover, .entry-summary a:hover, .comment-content a:hover, .site-content nav a:hover, #respond form a:hover {
 	text-decoration: underline;
-	color: #e41f1f;
+	color: #efefef;
 }
 .entry-content a, .entry-summary a, .comment-content a, .site-content nav a, #respond form a {
 	text-decoration:none;
-	color: #fff;
+	color: #1FA7E4;
 }
 .comments-link a, .entry-meta a, li.bypostauthor cite span {
 	border-radius: 3px 3px 3px 3px;
@@ -97,22 +81,26 @@ article.format-aside .aside {
 	padding: 2px 5px;
 	text-decoration: none;
 	background-color: #222222;
-	color: #ffffff;
+	color: #1FA7E4;
 	border: none;
 }
 .comments-link a:hover, .entry-meta a:hover{ 
-	color: #e41f1f;
+	color: #efefef;
+}
+.entry-title a:hover {
+    text-decoration: underline;
+	color: #efefef;
 }
 .widget-area  .widget a:hover, footer[role="contentinfo"] a:hover  {
-	color: #e41f1f;
+	color: #1FA7E4;
 }
 footer[role="contentinfo"] a {
-	color: #ffffff;
+	color: #CCCCCC;
 }
 .credits {
 	float: right;
 }  
-/* =Menu
+/* Menu
 ----------------------------------------------- */
 
 .main-navigation ul.nav-menu, .main-navigation div.nav-menu > ul {
@@ -188,7 +176,7 @@ a:active img[class*="wp-image-"] {
 }
 
 
-/* =Status
+/* Status
 ----------------------------------------------- */
 
 .format-status img.avatar {
@@ -197,7 +185,7 @@ a:active img[class*="wp-image-"] {
 	box-shadow: 0 1px 2px #333;
 }
 
-/* =error404
+/* error404
 ----------------------------------------------- */
 .error404 #main #searchform {
 	background: #060606;
@@ -205,7 +193,7 @@ a:active img[class*="wp-image-"] {
 }
 
 
-/* =Attachments
+/* Attachments
 ----------------------------------------------- */
 
 .image-attachment div.attachment {
@@ -223,11 +211,9 @@ a:active img[class*="wp-image-"] {
 }
 
 
-/* =Widgets
+/* Widgets
 ----------------------------------------------- */
-.widget-title:before {
-	content: "// ";
-}
+
 .widget-title {
 	color: #ccc ;
 }
@@ -262,7 +248,7 @@ a:active img[class*="wp-image-"] {
 	border-color: #333;
 }
 
-/* =Comments
+/* Comments
 ----------------------------------------------- */
 
 /* Comment Form */
@@ -284,7 +270,7 @@ a:active img[class*="wp-image-"] {
 }
 #respond .comment-form-author .required,
 #respond .comment-form-email .required {
-	color: #e41f1f;
+	color: #42caff;
 }
 #respond input#submit {
 	color: #111;
@@ -315,13 +301,13 @@ a:active img[class*="wp-image-"] {
 
 a.comment-reply-link, .edit-link  a{
     border-radius: 2px 2px 2px 2px;
-    color: #ffffff;
+    color: #1FA7E4;
     padding: 2px 5px;
     text-decoration: none;
 	background-color: #222222;
 }
 .edit-link a:hover, a.comment-reply-link:hover  { 
-	color:#efefef;
+	color:#efefef ;
 }
 .commentlist .avatar {
     border-radius: 3px 3px 3px 3px;
@@ -385,3 +371,4 @@ a.comment-reply-link, .edit-link  a{
 	border:none !important;
 	background:none !important;
 }
+ No newline at end of file
