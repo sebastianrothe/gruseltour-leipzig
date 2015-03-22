@@ -1,18 +1,17 @@
 @@ -0,0 +1,366 @@
 /*
-Theme Name: Twenty Twelve Dark
-Theme URI: http://zeaks.org
-Description: A Dark color scheme of 2012 WordPress theme based on Twenty Eleven Dark.
-Author: Zeaks
-Author url: http://zeaks.org/
+Theme Name: Gruseltour Leipzig Theme
+Theme URI: http://gruseltour-leipzig.de
+Description: The Gruseltour Leipzig theme based on http://zeaks.org/ Twenty Twelve Dark.
+Author: Sebastian
+Author url: http://gruseltour-leipzig.de
 Version: 1.0
 Tags: black, blue, white, fixed-width, custom-header, theme-options
 Template: twentytwelve
 */
-@import url('../twentytwelve/style.css');
 
 /*
-	A dark color scheme for Twenty Twelve
+	The Gruseltour Leipzig theme
 */
 
 /* Global
