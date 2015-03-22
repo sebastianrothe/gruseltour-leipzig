@@ -18,15 +18,16 @@ Template: twentytwelve
 /* Global
 ----------------------------------------------- */
 a {
-	color: #1FA7E4; 
+	color: #FFF; 
 }
 a:hover {
-	color: #1FA7E4;
+	color: #FFF;
+	text-decoration:underline;
 }
 a:visited {
-    color: #1FA7E4;
+    color: #FFF;
 }
-.site-header h1 a,.site-header h2  a,.site-header h2{
+.site-header h1 a, .site-header h2  a, .site-header h2 {
     color: #CCC;
 }
 .site-header h1 a:hover, .site-header h2 a:hover, .site-header a:visited {
