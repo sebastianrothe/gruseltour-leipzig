@@ -70,10 +70,6 @@ changes.txt
 
 
 ---------------------------- style.css
-.header-image {
-  margin-top: 0;
-}
-
 /* Silbentrennung deaktivieren */
 .site-content article,
 .widget-area .widget {
@@ -102,6 +98,10 @@ changes.txt
 }
 
 /* Gruseltour Styles */
+.header-image {
+ 	margin-top: 0;
+}
+
 /* Datepicker */
 .ui-datepicker-unselectable.ui-datepicker-tour-full {
 	background: red;
@@ -124,7 +124,10 @@ form input {
 	background-color: #fdfdfd;
 	bottom: 0;
 	right: 0;
-	padding: 10px;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-up: 10px;
+	padding-left: 12px;
 	border-radius: 2px 0 0 2px;
 	-moz-border-radius: 2px 0 0 2px;
 	-webkit-border-radius: 2px 0 0 2px;
@@ -231,7 +234,7 @@ add_action( 'wp_enqueue_scripts', 'load_datepicker' );
 // Slideshow laden
 function load_slideshow() {
 	wp_enqueue_script('jquery-ui-datepicker');
-	wp_enqueue_style('slideshow-style', '//gruseltour-leipzig.de/css/slideshow.css');
+	wp_enqueue_style('slideshowgi-style', '//gruseltour-leipzig.de/css/slideshow.css');
 }
 add_action( 'wp_enqueue_scripts', 'load_slideshow' );
 

@@ -10,15 +10,22 @@
  * @since Twenty Twelve 1.0
  */
 ?>
+	<!-- Mail Button -->
+
+	<!-- Telefon Button -->
+
+	<!-- Buchen Button -->
+	<div class="buchen-div">
+		<a class="buchen-button" href="//gruseltour-leipzig.de/anmeldung">Gruseltour hier buchen!</a>
+	</div>
+
 	</div><!-- #main .wrapper -->
 	<footer id="colophon" role="contentinfo">
-
 		<div class="site-info">
-			<?php do_action( 'twentytwelve_credits' ); ?>
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'twentytwelve' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'twentytwelve' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'twentytwelve' ), 'WordPress' ); ?></a>
-			
-			<span class="credits"><a href="http://n3wjack.net/twentytwelvedarktheme/" title="Twenty Twelve Options" target="_blank">Twenty Twelve Evening Red</a></span>
-			<br>
+			<a href="//gruseltour-leipzig.de/impressum">Impressum</a>
+			<br />
+			<br />
+			Gruseltour-Leipzig Proudly powered by <a href="http://wordpress.org/" title="Wordpress">Wordpress</a>. Theme: Twenty Twelve Dark Theme by <a href="http://www.zeaks.org/2012/twenty-twelve-dark-child-theme">Zeaks</a> 
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
