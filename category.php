@@ -17,7 +17,6 @@ get_header(); ?>
 		<div id="content" role="main">
 
 		<?php if ( have_posts() ) : ?>
-			<!-- skip the header
 			<header class="archive-header">
 				<h1 class="archive-title"><?php printf( __( 'Category Archives: %s', 'twentytwelve' ), '<span>' . single_cat_title( '', false ) . '</span>' ); ?></h1>
 
