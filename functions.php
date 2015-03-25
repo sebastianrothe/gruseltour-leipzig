@@ -33,12 +33,12 @@ if (!function_exists('twentytwelve_content_nav')) {
 function load_datepicker_scripts() {
 	wp_enqueue_script('jquery-ui-datepicker');
 	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
-	wp_enqueue_script('datepicker-script', get_template_directory_uri(); . '/js/datepicker.js');
+	wp_enqueue_script('datepicker-script', get_template_directory_uri() . '/js/datepicker.js');
 }
 add_action( 'wp_enqueue_scripts', 'load_datepicker_scripts' );
 
 function style_datepicker() {
-	wp_enqueue_script('style-datepicker-script', get_template_directory_uri(); . '/js/style-datepicker.js');
+	wp_enqueue_script('style-datepicker-script', get_template_directory_uri() . '/js/style-datepicker.js');
 }
 add_action( 'wp_footer', 'style-datepicker');
 
