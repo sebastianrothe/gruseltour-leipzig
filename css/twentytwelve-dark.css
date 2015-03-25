@@ -52,11 +52,11 @@ article.format-aside .aside {
 }
 .entry-content a:hover, .entry-summary a:hover, .comment-content a:hover, .site-content nav a:hover, #respond form a:hover {
 	text-decoration: underline;
-	color: #efefef;
+	color: #FFF;
 }
 .entry-content a, .entry-summary a, .comment-content a, .site-content nav a, #respond form a {
 	text-decoration:none;
-	color: #1FA7E4;
+	color: #FFF;
 }
 .comments-link a, .entry-meta a, li.bypostauthor cite span {
 	border-radius: 3px 3px 3px 3px;
@@ -65,18 +65,17 @@ article.format-aside .aside {
 	padding: 2px 5px;
 	text-decoration: none;
 	background-color: #222222;
-	color: #1FA7E4;
+	color: #FFF;
 	border: none;
 }
 .comments-link a:hover, .entry-meta a:hover{ 
-	color: #efefef;
+	text-decoration: underline;
 }
 .entry-title a:hover {
     text-decoration: underline;
-	color: #efefef;
 }
 .widget-area  .widget a:hover, footer[role="contentinfo"] a:hover  {
-	color: #1FA7E4;
+	text-decoration: underline;
 }
 footer[role="contentinfo"] a {
 	color: #CCCCCC;
