@@ -1,5 +1,4 @@
 <?php
-
 // include parent stylesheet
 add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 function theme_enqueue_styles() {
@@ -30,22 +29,31 @@ if (!function_exists('twentytwelve_content_nav')) {
 /**
  * Datepicker initialisieren
  */
+add_action( 'wp_footer', 'load_datepicker_scripts');
 function load_datepicker_scripts() {
-	wp_enqueue_script('jquery-ui-datepicker');
-	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
-	wp_enqueue_script('datepicker-script', get_template_directory_uri() . '/js/datepicker.js');
-}
-add_action( 'wp_enqueue_scripts', 'load_datepicker_scripts' );
+	// Use `get_stylesheet_directoy_uri() if your script is inside your theme or child theme.
+    wp_register_script( 'datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
 
-function style_datepicker() {
-	wp_enqueue_script('style-datepicker-script', get_template_directory_uri() . '/js/style-datepicker.js');
+    // Let's enqueue a script only to be used on a specific page of the site
+    if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt')) {
+        // Enqueue a script that has both jQuery (automatically registered by WordPress)
+        // and my-script (registered earlier) as dependencies.
+        wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'datepicker-script'));
+    }
 }
-add_action( 'wp_footer', 'style_datepicker');
+
+// Jquery UI
+add_action( 'wp_enqueue_scripts', 'load_jquery_ui');
+function load_jquery_ui() {
+    // Let's enqueue a script only to be used on a specific page of the site
+    if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt')) 
+    	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+}
 
 /**
  * Font Awesome hinzufügen (Icons)
  */
+add_action( 'wp_enqueue_scripts', 'load_font_awesome' );
 function load_font_awesome() {
 	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.3.0/css/font-awesome.min.css', array(), '4.3.0');
 }
-add_action( 'wp_enqueue_scripts', 'load_font_awesome' );
