@@ -50,6 +50,7 @@ form input {
 }
 
 /* Buchen-Button */
+/* TODO: css to button */;
 .buchen-div {
 	position: fixed;
 	border: 1px solid #fff;
@@ -58,7 +59,7 @@ form input {
 	right: 0;
 	padding-right: 10px;
 	padding-bottom: 10px;
-	padding-up: 10px;
+	padding-top: 10px;
 	padding-left: 12px;
 	border-radius: 2px 0 0 2px;
 	-moz-border-radius: 2px 0 0 2px;
@@ -72,12 +73,15 @@ form input {
 	-moz-box-shadow: 0 0 20px #fff;
 	-webkit-box-shadow: 0 0 20px#fff;
 	box-shadow: 0 0 20px #fff;
+	padding-top: 10px;
 }
 
 .buchen-div a.buchen-button {
 	color: #000;
 	font-weight: bold;
 	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
 }
 
 /* Slideshow */
