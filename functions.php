@@ -40,7 +40,7 @@ add_action( 'wp_enqueue_scripts', 'load_datepicker_scripts' );
 function style_datepicker() {
 	wp_enqueue_script('style-datepicker-script', get_template_directory_uri() . '/js/style-datepicker.js');
 }
-add_action( 'wp_footer', 'style-datepicker');
+add_action( 'wp_footer', 'style_datepicker');
 
 /**
  * Font Awesome hinzufügen (Icons)
