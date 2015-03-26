@@ -29,17 +29,17 @@ if (!String.prototype.format) {
   };
 }
 
-function transformToGermanDateString(date) {
+function toGermanDateString(date) {
     return "{0}.{1}.{2}".format(date.getDate().toString(), (date.getMonth() + 1), date.getFullYear());   
 }
 
-function transformToGermanDateStringWithZeros(date) {
+function toGermanDateStringWithZeros(date) {
 	function padZero(n) {return n < 10 ? '0'+ n : n};
     return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
 }
 
 function isDateDisabled(date, disabledDates) {
-    return jQuery.inArray(transformToGermanDateString(date), disabledDates) != -1;
+    return jQuery.inArray(toGermanDateString(date), disabledDates) != -1;
 }
 
 function isAvailableTourDate(date) {

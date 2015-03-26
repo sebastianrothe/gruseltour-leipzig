@@ -1,9 +1,9 @@
-QUnit.test("testTransformToGermanDateString", function(assert) {
-	assert.equal(transformToGermanDateString(new Date(2014, 0, 1)), "1.1.2014");  
+QUnit.test("testToGermanDateString", function(assert) {
+	assert.equal(toGermanDateString(new Date(2014, 0, 1)), "1.1.2014");  
 });
 
-QUnit.test("transformToGermanDateStringWithZeros", function(assert) {
-	assert.equal(transformToGermanDateStringWithZeros(new Date(2014, 0, 1)), "01.01.2014");  
+QUnit.test("testToGermanDateStringWithZeros", function(assert) {
+	assert.equal(toGermanDateStringWithZeros(new Date(2014, 0, 1)), "01.01.2014");  
 });
 
 QUnit.test("testTrimDateLines", function(assert) {
