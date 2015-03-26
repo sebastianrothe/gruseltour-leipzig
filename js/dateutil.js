@@ -9,18 +9,25 @@ if (!String.prototype.format) {
 }
 
 function toGermanDateString(date) {
-    return "{0}.{1}.{2}".format(date.getDate().toString(), (date.getMonth() + 1), date.getFullYear());   
+  return "{0}.{1}.{2}".format(date.getDate().toString(), (date.getMonth() + 1), date.getFullYear());   
 }
 
 function toGermanDateStringWithZeros(date) {
-	function padZero(n) {return n < 10 ? '0' + n : n};
-    return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
+  return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
+}
+
+function padZero(n) {
+  return n < 10 ? '0' + n : n;
+};
+
+function parseGermanDate(dateString) {
+  var parts = dateString.split('.');
+  return new Date(parts[2], parts[1] - 1, parts[0]);
 }
 
 function toGermanStringWithZeros(str) {
-	function padZero(n) {return n < 10 ? '0' + n : n};
-	var date = new Date(Date.parse(str));
-    return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
+	var date = parseGermanDate(str);
+  return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
 }
 
 function cleanDisabledDateString(dirtyString) {
