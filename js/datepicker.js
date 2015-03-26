@@ -24,16 +24,18 @@ if (!String.prototype.format) {
   String.prototype.format = function() {
     var args = arguments;
     return this.replace(/{(\d+)}/g, function(match, number) { 
-      return typeof args[number] != 'undefined'
-        ? args[number]
-        : match
-      ;
+      return typeof args[number] != 'undefined' ? args[number] : match;
     });
   };
 }
 
 function transformToGermanDateString(date) {
     return "{0}.{1}.{2}".format(date.getDate().toString(), (date.getMonth() + 1), date.getFullYear());   
+}
+
+function transformToGermanDateStringWithZeros(date) {
+	function padZero(n) {return n < 10 ? '0'+ n : n};
+    return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
 }
 
 function isDateDisabled(date, disabledDates) {
@@ -52,11 +54,6 @@ function isAvailableTourDate(date) {
 /* an diesen Tagen können keine Termine mehr angenommen werden */
 var disabledTourDays = ["27.3.2015","28.3.2015","21.3.2015","10.4.2015","11.4.2015","12.4.2015","4.4.2015","5.4.2015","17.4.2015","25.4.2015","26.4.2015","29.5.2015","30.5.2015","31.5.2015","3.7.2015","4.7.2015","5.7.2015"];
 var disabledText = "Die Tour ist an diesem Tag schon ausgebucht";
-
-function testReadDisabledDates() {
-	var input = "1.1.2014\n3.5.2015 \n 4.8.2015\r\n";
-	var lines = cleanDisabledDateString(input).split("\n");
-}
 
 function cleanDisabledDateString(dirtyString) {
 	return dirtyString.trim().replace(/ /g,'').replace(/\r\n/g, '\n');
