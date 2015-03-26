@@ -35,11 +35,17 @@ QUnit.test("testCleanDisabledDateLines", function(assert) {
 	assert.equal(cleanDisabledDateString("  1.1.2014\n   3.5.2015 \n 4.8.2015 \n  "), "1.1.2014\n3.5.2015\n4.8.2015");
 });
 
-QUnit.test("testReadDisabledDates", function(assert) {
+QUnit.test("testLinesToArrayDisabledDates", function(assert) {
 	var input = "1.1.2014\n3.5.2015 \n 4.8.2015\r\n";
 	var lines = cleanDisabledDateString(input).split("\n");
 	var mappedLines = lines.map(toGermanStringWithZeros);
 	assert.equal(mappedLines[0], "01.01.2014");
 	assert.equal(mappedLines[1], "03.05.2015");
 	assert.equal(mappedLines[2], "04.08.2015");
+});
+
+QUnit.test("testLoadFileFromServer", function(assert) {
+	jQuery.get("data.txt", function(data) {
+		assert.equal(data, "1.2.2014\n03.05.2015\n04.08.2015");
+	});
 });
