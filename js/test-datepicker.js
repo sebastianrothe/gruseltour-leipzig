@@ -1,18 +1,20 @@
 QUnit.test("testToGermanDateString", function(assert) {
-	assert.equal(toGermanDateString(new Date(2014, 0, 1)), "1.1.2014");  
+	assert.equal(toGermanDateString(new Date(2014, 0, 1)), "1.1.2014");
 });
 
 QUnit.test("testToGermanDateStringWithZeros", function(assert) {
-	assert.equal(toGermanDateStringWithZeros(new Date(2014, 0, 1)), "01.01.2014");  
+	assert.equal(toGermanDateStringWithZeros(new Date(2014, 0, 1)), "01.01.2014");
 });
 
 QUnit.test("testToGermanStringWithZeros", function(assert) {
-	assert.equal(toGermanStringWithZeros("1.1.2014"), "01.01.2014");  
+	assert.equal(toGermanStringWithZeros("1.2.2014"), "01.02.2014");
+	assert.equal(toGermanStringWithZeros("01.02.2014"), "01.02.2014");
 });
 
 QUnit.test("testToGermanStringArrayWithZeros", function(assert) {
-	var fixedArray = ["1.1.2014"].map(toGermanStringWithZeros);
-	assert.equal(fixedArray[0], "01.01.2014");  
+	var fixedArray = ["1.2.2014", "11.12.2016"].map(toGermanStringWithZeros);
+	assert.equal(fixedArray[0], "01.02.2014");
+	assert.equal(fixedArray[1], "11.12.2016");
 });
 
 QUnit.test("testTrimDateLines", function(assert) {
@@ -36,6 +38,8 @@ QUnit.test("testCleanDisabledDateLines", function(assert) {
 QUnit.test("testReadDisabledDates", function(assert) {
 	var input = "1.1.2014\n3.5.2015 \n 4.8.2015\r\n";
 	var lines = cleanDisabledDateString(input).split("\n");
-
-	expect(0);
+	var mappedLines = lines.map(toGermanStringWithZeros);
+	assert.equal(mappedLines[0], "01.01.2014");
+	assert.equal(mappedLines[1], "03.05.2015");
+	assert.equal(mappedLines[2], "04.08.2015");
 });
