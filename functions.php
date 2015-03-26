@@ -1,9 +1,9 @@
 <?php
 // include parent stylesheet
-add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 function theme_enqueue_styles() {
-    wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
-    wp_enqueue_style( 'child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
+    wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/style.css', array('parent-style'));
 }
 
 // Use WP-PageNavi when it's active
@@ -29,31 +29,32 @@ if (!function_exists('twentytwelve_content_nav')) {
 /**
  * Datepicker initialisieren
  */
-add_action( 'wp_footer', 'load_datepicker_scripts');
+add_action('wp_footer', 'load_datepicker_scripts');
 function load_datepicker_scripts() {
 	// Use `get_stylesheet_directoy_uri() if your script is inside your theme or child theme.
-    wp_register_script( 'datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
+	wp_register_script('dateutil-script', get_stylesheet_directory_uri() . '/js/dateutil.js');
+    wp_register_script('datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
 
     // Let's enqueue a script only to be used on a specific page of the site
     if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt')) {
         // Enqueue a script that has both jQuery (automatically registered by WordPress)
         // and my-script (registered earlier) as dependencies.
-        wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'datepicker-script'));
+        wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'dateutil-script', 'datepicker-script'), true);
     }
 }
 
 // Jquery UI
-add_action( 'wp_enqueue_scripts', 'load_jquery_ui');
+add_action('wp_enqueue_scripts', 'load_jquery_ui');
 function load_jquery_ui() {
     // Let's enqueue a script only to be used on a specific page of the site
     if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt')) 
-    	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css');
+    	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', false, '1.11.4');
 }
 
 /**
  * Font Awesome hinzufügen (Icons)
  */
-add_action( 'wp_enqueue_scripts', 'load_font_awesome' );
+add_action('wp_enqueue_scripts', 'load_font_awesome');
 function load_font_awesome() {
-	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.3.0/css/font-awesome.min.css', array(), '4.3.0');
+	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.3.0/css/font-awesome.min.css', false, '4.3.0');
 }
