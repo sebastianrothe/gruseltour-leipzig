@@ -36,16 +36,32 @@ QUnit.test("testCleanDisabledDateLines", function(assert) {
 });
 
 QUnit.test("testLinesToArrayDisabledDates", function(assert) {
-	var input = "1.1.2014\n3.5.2015 \n 4.8.2015\r\n";
+	var input = "1.2.2014\n3.5.2015 \n 4.8.2015\r\n";
 	var lines = cleanDisabledDateString(input).split("\n");
 	var mappedLines = lines.map(toGermanStringWithZeros);
-	assert.equal(mappedLines[0], "01.01.2014");
+	assert.equal(mappedLines[0], "01.02.2014");
 	assert.equal(mappedLines[1], "03.05.2015");
 	assert.equal(mappedLines[2], "04.08.2015");
 });
 
 QUnit.test("testLoadFileFromServer", function(assert) {
+	var done = assert.async();
 	jQuery.get("data.txt", function(data) {
-		assert.equal(data, "1.2.2014\n03.05.2015\n04.08.2015");
+		assert.ok(data.toString().length > 0);
+		assert.notEqual(data.toString().indexOf("1.2.2014"), -1);
+		assert.notEqual(data.toString().indexOf("1.2.2014\r\n03.05.2015\r\n04.08.2015"), -1);
+		done();
+	});
+});
+
+QUnit.test("testReadAndClean", function(assert) {
+	var done = assert.async();
+	jQuery.get("data.txt", function(data) {
+		var lines = cleanDisabledDateString(data).split("\n");
+		var mappedLines = lines.map(toGermanStringWithZeros);
+		assert.equal(mappedLines[0], "01.02.2014");
+		assert.equal(mappedLines[1], "03.05.2015");
+		assert.equal(mappedLines[2], "04.08.2015");
+		done();
 	});
 });
