@@ -1,14 +1,14 @@
 /* Global
 ----------------------------------------------- */
 a {
-	color: #FFF; 
+	color: #1FA7E4; 
 }
 a:hover {
-	color: #FFF;
+	color: #1FA7E4;
 	text-decoration:underline;
 }
 a:visited {
-    color: #FFF;
+    color: #1FA7E4;
 }
 .site-header h1 a, .site-header h2  a, .site-header h2 {
     color: #CCC;
@@ -51,18 +51,18 @@ article.format-aside .aside {
 	text-decoration:none;
 }
 .entry-content a:visited, .comment-content a:visited {
-	color: #FFF;
+	color: #1FA7E4;
 }
 .entry-content img, .comment-content img, .widget img, img.header-image, .author-avatar img, img.wp-post-image {
 	background-color: #0f0f0f;
 }
 .entry-content a:hover, .entry-summary a:hover, .comment-content a:hover, .site-content nav a:hover, #respond form a:hover {
 	text-decoration: underline;
-	color: #FFF;
+	color: #1FA7E4;
 }
 .entry-content a, .entry-summary a, .comment-content a, .site-content nav a, #respond form a {
 	text-decoration:none;
-	color: #FFF;
+	color: #1FA7E4;
 }
 .comments-link a, .entry-meta a, li.bypostauthor cite span {
 	border-radius: 3px 3px 3px 3px;
@@ -71,7 +71,7 @@ article.format-aside .aside {
 	padding: 2px 5px;
 	text-decoration: none;
 	background-color: #222222;
-	color: #FFF;
+	color: #CCCCCC;
 	border: none;
 }
 .comments-link a:hover, .entry-meta a:hover{ 
@@ -80,15 +80,19 @@ article.format-aside .aside {
 .entry-title a:hover {
     text-decoration: underline;
 }
-.widget-area  .widget a:hover, footer[role="contentinfo"] a:hover  {
+.widget-area .widget a:hover, footer[role="contentinfo"] a:hover  {
 	text-decoration: underline;
 }
 footer[role="contentinfo"] a {
 	color: #CCCCCC;
 }
+footer[role="contentinfo"] a:hover {
+  color: #1FA7E4;
+}
 .credits {
 	float: right;
-}  
+}
+
 /* Menu
 ----------------------------------------------- */
 
