@@ -10,6 +10,11 @@ QUnit.test("testToGermanStringWithZeros", function(assert) {
 	assert.equal(toGermanStringWithZeros("1.1.2014"), "01.01.2014");  
 });
 
+QUnit.test("testToGermanStringArrayWithZeros", function(assert) {
+	var fixedArray = ["1.1.2014"].map(toGermanStringWithZeros);
+	assert.equal(fixedArray[0], "01.01.2014");  
+});
+
 QUnit.test("testTrimDateLines", function(assert) {
 	assert.equal("  1.1.2014\n   3.5.2015 \n 4.8.2015\n".trim(), "1.1.2014\n   3.5.2015 \n 4.8.2015");
 	assert.equal("  1.1.2014\n   3.5.2015 \n 4.8.2015\n  ".trim(), "1.1.2014\n   3.5.2015 \n 4.8.2015");
