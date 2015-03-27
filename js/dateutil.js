@@ -9,7 +9,7 @@ if (!String.prototype.format) {
 }
 
 function toGermanDateString(date) {
-  return "{0}.{1}.{2}".format(date.getDate().toString(), (date.getMonth() + 1), date.getFullYear());   
+  return toGermanDateStringWithZeros(date);   
 }
 
 function toGermanDateStringWithZeros(date) {
@@ -18,7 +18,7 @@ function toGermanDateStringWithZeros(date) {
 
 function padZero(n) {
   return n < 10 ? '0' + n : n;
-};
+}
 
 function parseGermanDate(dateString) {
   var parts = dateString.split('.');
