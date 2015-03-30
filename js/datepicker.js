@@ -19,13 +19,9 @@ jQuery.datepicker.regional['de'] = {
 };
 jQuery.datepicker.setDefaults(jQuery.datepicker.regional["de"]);
 
-function isDateDisabled(date, disabledDates) {
-    return jQuery.inArray(toGermanDateString(date), disabledDates) != -1;
-}
-
 function isAvailableTourDate(date) {
     // TODO: only weekends
-    if (isDateDisabled(date, disabledTourDays)) {
+    if (isDateDisabledOld(date, disabledTourDays)) {
         return [false, "ui-datepicker-tour-full", disabledText];
     }
     return [true];

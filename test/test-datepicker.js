@@ -1,4 +1,8 @@
 QUnit.test("testToGermanDateString", function(assert) {
+	assert.equal(toGermanDateStringOld(new Date(2014, 0, 1)), "1.1.2014");
+});
+
+QUnit.test("testToGermanDateString", function(assert) {
 	assert.equal(toGermanDateString(new Date(2014, 0, 1)), "01.01.2014");
 });
 
@@ -44,7 +48,7 @@ QUnit.test("testLinesToArrayDisabledDates", function(assert) {
 	assert.equal(mappedLines[2], "04.08.2015");
 });
 
-QUnit.test("testLoadFileFromServer", function(assert) {
+QUnit.test("testLoadTestDatafileFromServer", function(assert) {
 	var done = assert.async();
 	jQuery.get("//gruseltour-leipzig.de/wordpress/wp-content/themes/gruseltour-leipzig/test/data.txt", function(data) {
 		assert.ok(data.toString().length > 0);
@@ -54,7 +58,7 @@ QUnit.test("testLoadFileFromServer", function(assert) {
 	});
 });
 
-QUnit.test("testReadAndClean", function(assert) {
+QUnit.test("testCleanDisabledDateStringAndLineMapToGermanStringWithZeros", function(assert) {
 	var done = assert.async();
 	jQuery.get("//gruseltour-leipzig.de/wordpress/wp-content/themes/gruseltour-leipzig/test/data.txt", function(data) {
 		var lines = cleanDisabledDateString(data).split("\n");
@@ -66,13 +70,44 @@ QUnit.test("testReadAndClean", function(assert) {
 	});
 });
 
-QUnit.test("testFunctionReadAndClean", function(assert) {
+QUnit.test("testTransformDateLinesToArrayTestData", function(assert) {
 	var done = assert.async();
 	jQuery.get("//gruseltour-leipzig.de/wordpress/wp-content/themes/gruseltour-leipzig/test/data.txt", function(data) {
 		var mappedLines = transformDateLinesToArray(data);
 		assert.equal(mappedLines[0], "01.02.2014");
 		assert.equal(mappedLines[1], "03.05.2015");
 		assert.equal(mappedLines[2], "04.08.2015");
+		done();
+	});
+});
+
+QUnit.test("testIsDateDisabledOld", function(assert) {
+	var done = assert.async();
+	jQuery.get("//gruseltour-leipzig.de/wordpress/wp-content/themes/gruseltour-leipzig/test/data.txt", function(data) {
+		var lines = cleanDisabledDateString(data).split("\n");
+		var mappedLines = lines.map(toGermanString);
+		assert.equal(mappedLines[0], "1.2.2014");
+		assert.equal(mappedLines[1], "3.5.2015");
+		assert.equal(mappedLines[2], "4.8.2015");
+		assert.ok(jQuery.inArray(toGermanDateStringOld(new Date(2015, 7, 4)), mappedLines) >= 0);
+		assert.ok(jQuery.inArray(toGermanDateStringOld(new Date(2015, 8, 4)), mappedLines) == -1);
+		assert.ok(isDateDisabledOld(new Date(2015, 7, 4), mappedLines));
+		assert.ok(!isDateDisabledOld(new Date(2015, 8, 4), mappedLines));
+		done();
+	});
+});
+
+QUnit.test("testIsDateDisabled", function(assert) {
+	var done = assert.async();
+	jQuery.get("//gruseltour-leipzig.de/wordpress/wp-content/themes/gruseltour-leipzig/test/data.txt", function(data) {
+		var mappedLines = transformDateLinesToArray(data);
+		assert.equal(mappedLines[0], "01.02.2014");
+		assert.equal(mappedLines[1], "03.05.2015");
+		assert.equal(mappedLines[2], "04.08.2015");
+		assert.ok(jQuery.inArray(toGermanDateStringWithZeros(new Date(2015, 7, 4)), mappedLines) >= 0);
+		assert.ok(jQuery.inArray(toGermanDateStringWithZeros(new Date(2015, 8, 4)), mappedLines) == -1);
+		assert.ok(isDateDisabled(new Date(2015, 7, 4), mappedLines));
+		assert.ok(!isDateDisabled(new Date(2015, 8, 4), mappedLines));
 		done();
 	});
 });

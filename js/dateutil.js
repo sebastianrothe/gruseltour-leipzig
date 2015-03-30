@@ -12,8 +12,12 @@ function toGermanDateString(date) {
   return toGermanDateStringWithZeros(date);   
 }
 
+function toGermanDateStringOld(date) {
+  return "{0}.{1}.{2}".format(date.getDate(), date.getMonth() + 1, date.getFullYear()); 
+}
+
 function toGermanDateStringWithZeros(date) {
-  return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
+  return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());
 }
 
 function padZero(n) {
@@ -30,6 +34,19 @@ function toGermanStringWithZeros(str) {
   return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());   
 }
 
+function toGermanString(str) {
+  var date = parseGermanDate(str);
+  return "{0}.{1}.{2}".format(date.getDate(), date.getMonth() + 1, date.getFullYear());   
+}
+
 function cleanDisabledDateString(dirtyString) {
 	return dirtyString.trim().replace(/ /g,'').replace(/\r\n/g, '\n');
+}
+
+function isDateDisabledOld(date, disabledDates) {
+    return jQuery.inArray(toGermanDateStringOld(date), disabledDates) != -1;
+}
+
+function isDateDisabled(date, disabledDates) {
+    return jQuery.inArray(toGermanDateString(date), disabledDates) != -1;
 }
