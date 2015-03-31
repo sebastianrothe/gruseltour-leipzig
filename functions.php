@@ -36,10 +36,22 @@ function load_datepicker_scripts() {
     wp_register_script('datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
 
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt')) {
+    if (is_page('anmeldung')) {
         // Enqueue a script that has both jQuery (automatically registered by WordPress)
         // and my-script (registered earlier) as dependencies.
         wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'dateutil-script', 'datepicker-script'), true);
+    }
+}
+
+/**
+ * Formularanzeige ändern
+ */
+add_action('wp_footer', 'hide_form_values_scripts');
+function hide_form_values_scripts() {
+    // Let's enqueue a script only to be used on a specific page of the site
+    if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein')) {
+        // Enqueue a script that has both jQuery (automatically registered by WordPress)
+        wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'), true);
     }
 }
 
@@ -47,7 +59,7 @@ function load_datepicker_scripts() {
 add_action('wp_enqueue_scripts', 'load_jquery_ui');
 function load_jquery_ui() {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt')) 
+    if (is_page('anmeldung')) 
     	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', false, '1.11.4');
 }
 
