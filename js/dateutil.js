@@ -47,6 +47,7 @@ function isDateDisabledOld(date, disabledDates) {
     return jQuery.inArray(toGermanDateStringOld(date), disabledDates) != -1;
 }
 
-function isDateDisabled(date, disabledDates) {
-    return jQuery.inArray(toGermanDateString(date), disabledDates) != -1;
+function transformDateLinesToArray(lines) {
+  // clean, split and parseToGerman
+  return cleanDisabledDateString(lines).split("\n").map(toGermanStringWithZeros);
 }
