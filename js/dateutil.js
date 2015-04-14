@@ -26,10 +26,10 @@ function stringToGermanDateString(str) {
 }
 
 function cleanDisabledDateString(dirtyString) {
-	return dirtyString.trim().replace(/ /g,'').replace(/\r\n/g, '\n');
+	return jQuery.trim(dirtyString).replace(/ /g,'').replace(/\r\n/g, '\n');
 }
 
 function transformDateLinesToArray(lines) {
   // clean, split and parseToGerman
-  return cleanDisabledDateString(lines).split("\n").map(stringToGermanDateString);
+  return jQuery.map(cleanDisabledDateString(lines).split("\n"), stringToGermanDateString);
 }

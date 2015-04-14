@@ -6,15 +6,15 @@ QUnit.test("testToGermanDateString", function(assert) {
 });
 
 QUnit.test("testToGermanStringArray", function(assert) {
-	var fixedArray = ["1.2.2014", "11.12.2016"].map(stringToGermanDateString);
+	var fixedArray = jQuery.map(["1.2.2014", "11.12.2016"], stringToGermanDateString);
 	assert.equal(fixedArray[0], "01.02.2014");
 	assert.equal(fixedArray[1], "11.12.2016");
 });
 
 QUnit.test("testTrimDateLines", function(assert) {
-	assert.equal("  1.1.2014\n   3.5.2015 \n 4.8.2015\n".trim(), "1.1.2014\n   3.5.2015 \n 4.8.2015");
-	assert.equal("  1.1.2014\n   3.5.2015 \n 4.8.2015\n  ".trim(), "1.1.2014\n   3.5.2015 \n 4.8.2015");
-	assert.equal("  1.1.2014\n   3.5.2015 \n 4.8.2015  \n  ".trim(), "1.1.2014\n   3.5.2015 \n 4.8.2015");
+	assert.equal(jQuery.trim("  1.1.2014\n   3.5.2015 \n 4.8.2015\n"), "1.1.2014\n   3.5.2015 \n 4.8.2015");
+	assert.equal(jQuery.trim("  1.1.2014\n   3.5.2015 \n 4.8.2015\n  "), "1.1.2014\n   3.5.2015 \n 4.8.2015");
+	assert.equal(jQuery.trim("  1.1.2014\n   3.5.2015 \n 4.8.2015  \n  "), "1.1.2014\n   3.5.2015 \n 4.8.2015");
 });
 
 QUnit.test("testReplaceSpaces", function(assert) {
@@ -32,7 +32,7 @@ QUnit.test("testCleanDisabledDateLines", function(assert) {
 QUnit.test("testLinesToArrayDisabledDates", function(assert) {
 	var input = "1.2.2014\n3.5.2015 \n 4.8.2015\r\n";
 	var lines = cleanDisabledDateString(input).split("\n");
-	var mappedLines = lines.map(stringToGermanDateString);
+	var mappedLines = jQuery.map(lines, stringToGermanDateString);
 	assert.equal(mappedLines[0], "01.02.2014");
 	assert.equal(mappedLines[1], "03.05.2015");
 	assert.equal(mappedLines[2], "04.08.2015");
@@ -52,7 +52,7 @@ QUnit.test("testCleanDisabledDateStringAndLineMapToGermanStringWithZeros", funct
 	var done = assert.async();
 	jQuery.get("//gruseltour-leipzig.de/wordpress/wp-content/themes/gruseltour-leipzig/test/data.txt", function(data) {
 		var lines = cleanDisabledDateString(data).split("\n");
-		var mappedLines = lines.map(stringToGermanDateString);
+		var mappedLines = jQuery.map(lines, stringToGermanDateString);
 		assert.equal(mappedLines[0], "01.02.2014");
 		assert.equal(mappedLines[1], "03.05.2015");
 		assert.equal(mappedLines[2], "04.08.2015");
