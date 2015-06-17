@@ -15,7 +15,11 @@ jQuery.datepicker.regional['de'] = {
 	firstDay: 1,
 	isRTL: false,
 	showMonthAfterYear: false,
-	yearSuffix: ''
+	yearSuffix: '',
+	showOtherMonths: true,
+    selectOtherMonths: true,
+    numberOfMonths: 3,
+    showWeek: true
 };
 jQuery.datepicker.setDefaults(jQuery.datepicker.regional["de"]);
 
