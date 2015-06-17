@@ -16,8 +16,6 @@ jQuery.datepicker.regional['de'] = {
 	isRTL: false,
 	showMonthAfterYear: false,
 	yearSuffix: '',
-	showOtherMonths: true,
-    selectOtherMonths: true,
     numberOfMonths: 3,
     showWeek: true
 };
