@@ -22,7 +22,7 @@ jQuery.datepicker.regional['de'] = {
 jQuery.datepicker.setDefaults(jQuery.datepicker.regional["de"]);
 
 jQuery(document).ready(function() {
-	/* Finde alle Divs nach dem ersten im Formular und filter nur nach dem 1. */
+	/* das 2. Div mit Eingabefeld finden */
 	var $datumseingabe = jQuery('div#contact-form-18 div input.text').filter(':first');
 
 	/* Aktiviere den Datepicker */

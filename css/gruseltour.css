@@ -35,11 +35,34 @@
 }
 
 /* Datepicker */
-.ui-datepicker-unselectable.ui-datepicker-tour-full {
-	background: red;
+.ui-state-default, .ui-widget-content .ui-state-default {
+    border: 1px solid #D3D3D3;
+    background: #E6E6E6;
+    font-weight: normal;
+    color: #555;
 }
 
-.ui-datepicker-readonly {
+.ui-datepicker .ui-state-disabled.available .ui-state-default, .ui-datepicker .ui-state-disabled.not-available .ui-state-default {
+    background: #CCC;
+    text-decoration: line-through;
+}
+
+.ui-datepicker .not-available .ui-state-default {
+	background: #FDCBCC;
+    border-color: #FDCBCC;
+}
+
+.ui-datepicker .available .ui-state-default {
+	background: #C5E8A5;
+	border-color: #C5E8A5;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled {
+    opacity: 0.35;
+    background-image: none;
+}
+
+.ui-datepicker.readonly {
 	background: white;
 	cursor: pointer;
 }

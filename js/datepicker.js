@@ -8,7 +8,7 @@ var disabledText = "Die Tour ist an diesem Tag schon ausgebucht";
 function isAvailableTourDate(date) {
     // TODO: only weekends
     if (isDateDisabled(date, disabledTourDays)) {
-        return [false, "ui-datepicker-tour-full", disabledText];
+        return [false, "not-available", disabledText];
     }
     return [true];
 }
