@@ -26,6 +26,17 @@ if (!function_exists('twentytwelve_content_nav')) {
 	}
 }
 
+// OpenGraph Images für Startseite
+add_action('wp_head','add_ogimages_for_frontpage');
+function add_ogimages_for_frontpage() {
+	if (!is_front_page()) {
+		return;
+	}
+
+	$output = '<meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2013/05/button-scary.png" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/05/cropped-grusel-poster-a3.jpg" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/06/1.jpg" />';
+	echo $output;	
+}
+
 /**
  * Datepicker initialisieren
  */
@@ -40,6 +51,8 @@ function load_datepicker_scripts() {
         // Enqueue a script that has both jQuery (automatically registered by WordPress)
         // and my-script (registered earlier) as dependencies.
         wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'dateutil-script', 'datepicker-script'), true);
+
+        // TODO: add noscript with dates
     }
 }
 
