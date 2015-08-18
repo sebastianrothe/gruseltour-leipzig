@@ -26,7 +26,7 @@ if (!function_exists('twentytwelve_content_nav')) {
 	}
 }
 
-// OpenGraph Images für Startseite
+// OpenGraph Images for the frontpage, the ones from YOAST via the Post are not correct
 add_action('wp_head','add_ogimages_for_frontpage');
 function add_ogimages_for_frontpage() {
 	if (!is_front_page()) {
@@ -34,6 +34,13 @@ function add_ogimages_for_frontpage() {
 	}
 
 	$output = '<meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2013/05/button-scary.png" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/05/cropped-grusel-poster-a3.jpg" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/06/1.jpg" />';
+	echo $output;	
+}
+
+// Cookie Warning for EU-Law
+add_action('wp_head','add_cookie_warning');
+function add_cookie_warning() {
+	$output = '<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent --><script type="text/javascript">    window.cookieconsent_options = {"message":"Diese Webseite benutzt Cookies, um Besuchern das Gruseln zu lernen.","dismiss":"Okay","learnMore":"Mehr Informationen","link":"//gruseltour-leipzig.de/datenschutz/","theme":"dark-top"};</script><script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script><!-- End Cookie Consent plugin -->';
 	echo $output;	
 }
 
