@@ -88,5 +88,5 @@ function load_jquery_ui() {
  */
 add_action('wp_enqueue_scripts', 'load_font_awesome');
 function load_font_awesome() {
-	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.3.0/css/font-awesome.min.css', false, '4.3.0');
+	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.4.0/css/font-awesome.min.css', false, '4.4.0');
 }
