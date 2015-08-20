@@ -1,7 +1,7 @@
 # Gruseltour Leipzig Theme
 
 This is a WordPress child theme for the Twenty-Twelve theme.
-It's based on [Zeaks'](http://zeak.org) dark theme and adapted to the needs of the website.
+It's based on [Zeaks'](http://zeak.org) [dark theme](https://github.com/Zeaksblog/twenty-dark) and adapted to the needs of the website [Gruseltour-Leipzig](http://gruseltour-leipzig.de).
 
 It includes
 * Jquery UI for a calendar widget
