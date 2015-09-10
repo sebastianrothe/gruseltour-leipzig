@@ -28,7 +28,7 @@
 			&nbps;-&nbsp;
 			<a href="//gruseltour-leipzig.de/datenschutz">Datenschutz</a>
 			<br />
-			Gruseltour-Leipzig.de powered by <a href="http://wordpress.org/" title="Wordpress">Wordpress</a>. Theme based on Twenty Twelve Dark Theme by <a href="http://www.zeaks.org/2012/twenty-twelve-dark-child-theme">Zeaks</a> 
+			Gruseltour Leipzig made with Love and lots of Open Source in Leipzig.
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
