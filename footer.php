@@ -28,7 +28,7 @@
 			&nbps;-&nbsp;
 			<a href="//gruseltour-leipzig.de/datenschutz">Datenschutz</a>
 			<br />
-			Gruseltour Leipzig made with Love and lots of Open Source in Leipzig.
+			Gruseltour Leipzig made with Love, Coffee and lots of Open Source in Leipzig.
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
