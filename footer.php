@@ -10,9 +10,11 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-		<!-- Mail Button -->
+		<!-- Findet uns auf -->
 
-		<!-- Telefon Button -->
+		<!-- Bekannt aus -->
+
+		<!-- Unterstützt durch -->
 
 		<!-- Buchen Button -->
 		<?php if (!is_page('anmeldung')) { ?>
@@ -28,7 +30,7 @@
 			&nbps;-&nbsp;
 			<a href="//gruseltour-leipzig.de/datenschutz">Datenschutz</a>
 			<br />
-			Gruseltour Leipzig made with love, coffee and lots of open source in Leipzig.
+			Gruseltour Leipzig made with <i class="fa fa-heart fa-inverse"></i>, <i class="fa fa-coffee fa-inverse"></i> and lots of open source in Leipzig.
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
