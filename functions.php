@@ -52,12 +52,16 @@ function load_datepicker_scripts() {
 	// Use `get_stylesheet_directoy_uri() if your script is inside your theme or child theme.
 	wp_register_script('dateutil-script', get_stylesheet_directory_uri() . '/js/dateutil.js');
     wp_register_script('datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
+    wp_register_script('jquery-validation-additional-script', '//ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/additional-methods.min.js');
+    wp_register_script('jquery-validation-de-script', '//ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/localization/messages_de.min.js');
 
     // Let's enqueue a script only to be used on a specific page of the site
     if (is_page('anmeldung')) {
         // Enqueue a script that has both jQuery (automatically registered by WordPress)
-        // and my-script (registered earlier) as dependencies.
+        // and my utility scripts (registered earlier) as dependencies.
         wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'dateutil-script', 'datepicker-script'), true);
+
+        wp_enqueue_script('validate-form-script', '//ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.min.js', array('jquery-validation-additional-script', 'jquery-validation-de-script'), true);
 
         // TODO: add noscript with dates
     }
