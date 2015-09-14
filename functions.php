@@ -38,7 +38,7 @@ function add_ogimages_for_frontpage() {
 }
 
 // Cookie Warning for EU-Law
-add_action('wp_head','add_cookie_warning');
+//add_action('wp_head','add_cookie_warning');
 function add_cookie_warning() {
 	$output = '<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent --><script type="text/javascript">    window.cookieconsent_options = {"message":"Diese Webseite benutzt Cookies, um Besuchern das Gruseln zu lernen.","dismiss":"Okay","learnMore":"Mehr Informationen","link":"//gruseltour-leipzig.de/datenschutz/","theme":"dark-top"};</script><script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script><!-- End Cookie Consent plugin -->';
 	echo $output;	
