@@ -1,5 +1,5 @@
 /*
-	The Gruseltour Leipzig theme
+	The Gruseltour Leipzig Theme
 */
 
 /* Silbentrennung deaktivieren */
@@ -41,6 +41,11 @@
 /* Gruseltour Styles */
 .header-image {
  	margin-top: 0;
+}
+
+/* no outlines */
+a:focus {
+  outline: none;
 }
 
 /* Datepicker */
