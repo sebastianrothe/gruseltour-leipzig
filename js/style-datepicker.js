@@ -35,7 +35,7 @@
 			isRTL: false,
 			showMonthAfterYear: false,
 			yearSuffix: '',
-		    numberOfMonths: 3,
+		    numberOfMonths: 1,
 		    showWeek: true
 		};
 		jQuery.datepicker.setDefaults(jQuery.datepicker.regional["de"]);
