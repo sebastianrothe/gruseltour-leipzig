@@ -15,20 +15,22 @@
 		<!-- Telefon Button -->
 
 		<!-- Buchen Button -->
-		<?php if (!is_page('anmeldung')) { ?>
+		<?php if (!is_page('inscripcion')) { ?>
 		<div class="buchen-div">
-			<a class="buchen-button" href="//gruseltour-leipzig.de/anmeldung">Gruseltour hier buchen!</a>
+			<a class="buchen-button" href="//leipzigmisteriosa.de/inscripcion">Reserva tu visita</a>
 		</div>
 		<?php } ?>
 	</div><!-- #main .wrapper -->
 
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
-			<a href="//gruseltour-leipzig.de/impressum">Impressum</a>
+			<a href="//leipzigmisteriosa.de/imprint">Imprint</a>
 			&nbps;-&nbsp;
-			<a href="//gruseltour-leipzig.de/datenschutz">Datenschutz</a>
+			<a href="//leipzigmisteriosa.de/privacy">Privacy</a>
 			<br />
-			Gruseltour Leipzig made with Love, Coffee and lots of Open Source in Leipzig.
+			Leipzig Misteriosa made with Love, Coffee and lots of Open Source in Leipzig.
+			<br />
+			Leipzig Misteriosa is a project by <a href="//gruseltour-leipzig.de">Gruseltour Leipzig</a>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

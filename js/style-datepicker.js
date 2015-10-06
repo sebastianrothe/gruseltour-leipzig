@@ -1,7 +1,7 @@
 (function(gruseltourApp) {
   gruseltourApp.init = function() {
     /* das 2. Div mit Eingabefeld finden */
-	var $datumseingabe = jQuery('div#contact-form-18 div input.text').filter(':first');
+	var $datumseingabe = jQuery('div#contact-form-19 div input.text').filter(':first');
 
 	/* Aktiviere den Datepicker */
     $datumseingabe.datepicker({
@@ -17,28 +17,28 @@
   };
 
   gruseltourApp.defaults = function() {
-		jQuery.datepicker.regional['de'] = {
-			closeText: 'Schließen',
-			prevText: '&#x3C;Zurück',
-			nextText: 'Vor&#x3E;',
-			currentText: 'Heute',
-			monthNames: ['Januar','Februar','März','April','Mai','Juni',
-			'Juli','August','September','Oktober','November','Dezember'],
-			monthNamesShort: ['Jan','Feb','Mär','Apr','Mai','Jun',
-			'Jul','Aug','Sep','Okt','Nov','Dez'],
-			dayNames: ['Sonntag','Montag','Dienstag','Mittwoch','Donnerstag','Freitag','Samstag'],
-			dayNamesShort: ['So','Mo','Di','Mi','Do','Fr','Sa'],
-			dayNamesMin: ['So','Mo','Di','Mi','Do','Fr','Sa'],
-			weekHeader: 'KW',
-			dateFormat: 'dd.mm.yy',
+		jQuery.datepicker.regional['es'] = {
+			closeText: "Cerrar",
+			prevText: "&#x3C;Ant",
+			nextText: "Sig&#x3E;",
+			currentText: "Hoy",
+			monthNames: [ "enero","febrero","marzo","abril","mayo","junio",
+			"julio","agosto","septiembre","octubre","noviembre","diciembre" ],
+			monthNamesShort: [ "ene","feb","mar","abr","may","jun",
+			"jul","ago","sep","oct","nov","dic" ],
+			dayNames: [ "domingo","lunes","martes","miércoles","jueves","viernes","sábado" ],
+			dayNamesShort: [ "dom","lun","mar","mié","jue","vie","sáb" ],
+			dayNamesMin: [ "D","L","M","X","J","V","S" ],
+			weekHeader: "Sm",
+			dateFormat: "dd/mm/yy",
 			firstDay: 1,
 			isRTL: false,
 			showMonthAfterYear: false,
 			yearSuffix: '',
-		    numberOfMonths: 3,
+		    numberOfMonths: 1,
 		    showWeek: true
 		};
-		jQuery.datepicker.setDefaults(jQuery.datepicker.regional["de"]);
+		jQuery.datepicker.setDefaults(jQuery.datepicker.regional["es"]);
 	};
 }(window.gruseltourApp = window.gruseltourApp || {}));
 

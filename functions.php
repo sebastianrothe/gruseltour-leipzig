@@ -27,20 +27,20 @@ if (!function_exists('twentytwelve_content_nav')) {
 }
 
 // OpenGraph Images for the frontpage, the ones from YOAST via the Post are not correct
-add_action('wp_head','add_ogimages_for_frontpage');
+//TODO: add_action('wp_head','add_ogimages_for_frontpage');
 function add_ogimages_for_frontpage() {
 	if (!is_front_page()) {
 		return;
 	}
 
-	$output = '<meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2013/05/button-scary.png" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/05/cropped-grusel-poster-a3.jpg" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/06/1.jpg" />';
+	$output = '<meta property="og:image" content="http://leipzigmisteriosa.de/wordpress/wp-content/uploads/2013/05/button-scary.png" /><meta property="og:image" content="http://leipzigmisteriosa.de/wordpress/wp-content/uploads/2014/05/cropped-grusel-poster-a3.jpg" /><meta property="og:image" content="http://leipzigmisteriosa.de/wordpress/wp-content/uploads/2014/06/1.jpg" />';
 	echo $output;	
 }
 
 // Cookie Warning for EU-Law
-add_action('wp_head','add_cookie_warning');
+//TODO: add_action('wp_head','add_cookie_warning');
 function add_cookie_warning() {
-	$output = '<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent --><script type="text/javascript">    window.cookieconsent_options = {"message":"Diese Webseite benutzt Cookies, um Besuchern das Gruseln zu lernen.","dismiss":"Okay","learnMore":"Mehr Informationen","link":"//gruseltour-leipzig.de/datenschutz/","theme":"dark-top"};</script><script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script><!-- End Cookie Consent plugin -->';
+	$output = '<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent --><script type="text/javascript">    window.cookieconsent_options = {"message":"This website is using cookies.","dismiss":"Okay","learnMore":"More Information","link":"//leipzigmisteriosa.de/privacy/","theme":"dark-top"};</script><script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script><!-- End Cookie Consent plugin -->';
 	echo $output;	
 }
 
@@ -54,22 +54,20 @@ function load_datepicker_scripts() {
     wp_register_script('datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
 
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung')) {
+    if (is_page('inscripcion')) {
         // Enqueue a script that has both jQuery (automatically registered by WordPress)
         // and my-script (registered earlier) as dependencies.
         wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'dateutil-script', 'datepicker-script'), true);
-
-        // TODO: add noscript with dates
     }
 }
 
 /**
- * Formularanzeige ändern
+ * Formular nach dem Absenden verstecken
  */
 add_action('wp_footer', 'hide_form_values_scripts');
 function hide_form_values_scripts() {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein')) {
+    if (is_page('inscripcion') {
         // Enqueue a script that has both jQuery (automatically registered by WordPress)
         wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'), true);
     }
@@ -79,14 +77,15 @@ function hide_form_values_scripts() {
 add_action('wp_enqueue_scripts', 'load_jquery_ui');
 function load_jquery_ui() {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung')) 
+    if (is_page('inscripcion')) 
     	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', false, '1.11.4');
 }
 
 /**
  * Font Awesome hinzufügen (Icons)
  */
-add_action('wp_enqueue_scripts', 'load_font_awesome');
+//TODO: not needed right now 
+//add_action('wp_enqueue_scripts', 'load_font_awesome');
 function load_font_awesome() {
 	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.4.0/css/font-awesome.min.css', false, '4.4.0');
 }

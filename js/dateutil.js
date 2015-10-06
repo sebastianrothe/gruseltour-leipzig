@@ -8,21 +8,21 @@ if (!String.prototype.format) {
   };
 }
 
-function toGermanDateString(date) {
-  return "{0}.{1}.{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());
+function toSpanishDateString(date) {
+  return "{0}/{1}/{2}".format(padZero(date.getDate()), padZero(date.getMonth() + 1), date.getFullYear());
 }
 
 function padZero(n) {
   return n < 10 ? '0' + n : n;
 }
 
-function parseGermanDate(dateString) {
-  var parts = dateString.split('.');
+function parseSpanishDate(dateString) {
+  var parts = dateString.split('/');
   return new Date(parts[2], parts[1] - 1, parts[0]);
 }
 
-function stringToGermanDateString(str) {
-  return toGermanDateString(parseGermanDate(str));  
+function stringToSpanishDateString(str) {
+  return toSpanishDateString(parseSpanishDate(str));  
 }
 
 function cleanDisabledDateString(dirtyString) {
@@ -31,5 +31,5 @@ function cleanDisabledDateString(dirtyString) {
 
 function transformDateLinesToArray(lines) {
   // clean, split and parseToGerman
-  return jQuery.map(cleanDisabledDateString(lines).split("\n"), stringToGermanDateString);
+  return jQuery.map(cleanDisabledDateString(lines).split("\n"), stringToSpanishDateString);
 }
