@@ -1,10 +1,15 @@
 /*
-Theme Name: leipzigmisteriosa
-Theme URI: http://leipzigmisteriosa.de
-Description: The Leipzig Misteriosa Theme based Gruseltour Leipzig Theme which itself is based on http://zeaks.org/ Twenty Twelve Dark.
-Author: Sebastian
-Author url: http://leipzigmisteriosa.de
-Version: 0.2 2015-10-07 22:31
-Tags: leipzigmisteriosa, black, blue, fixed-width, custom-header, responsive
+ Theme Name:   Leipzig Misteriosa
+ Theme URI:    https://github.com/sebastianrothe/leipzigmisteriosa
+ Description:  The Leipzig Misteriosa Theme based Gruseltour Leipzig Theme which itself is based on http://zeaks.org/ Twenty Twelve Dark.
+ Author:       Sebastian
+ Author URI:   http://leipzigmisteriosa.de
+ Template:     twentytwelve
+ Version:      0.5.0
+ License:      GNU General Public License v2 or later
+ License URI:  http://www.gnu.org/licenses/gpl-2.0.html
+ Tags:         dark, responsive-layout, accessibility-ready
+ Text Domain:  leipzigmisteriosa
 */
+@import url('css/twentytwelve-dark.css');
 @import url('css/misteriosa.css');
