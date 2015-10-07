@@ -58,13 +58,13 @@ function load_datepicker_scripts() {
     wp_register_script('datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
 
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung')) {
-        // Enqueue a script that has both jQuery (automatically registered by WordPress)
-        // and my-script (registered earlier) as dependencies.
-        wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'dateutil-script', 'datepicker-script'), true);
+    if (!is_page('anmeldung')) return;
 
-        // TODO: add noscript with dates
-    }
+    // Enqueue a script that has both jQuery (automatically registered by WordPress)
+    // and my-script (registered earlier) as dependencies.
+    wp_enqueue_script('style-datepicker-script', get_stylesheet_directory_uri() . '/js/style-datepicker.js', array('jquery', 'jquery-ui-datepicker', 'dateutil-script', 'datepicker-script'), true);
+
+    // TODO: add noscript with dates
 }
 }
 
@@ -75,10 +75,10 @@ add_action('wp_footer', 'hide_form_values_scripts');
 if (!function_exists('hide_form_values_scripts')) {
 function hide_form_values_scripts() {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein')) {
-        // Enqueue a script that has both jQuery (automatically registered by WordPress)
-        wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'), true);
-    }
+    if (!isPageWithForm()) return;
+
+    // Enqueue a script that has both jQuery (automatically registered by WordPress)
+    wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'), true);
 }
 }
 
@@ -87,8 +87,9 @@ add_action('wp_enqueue_scripts', 'load_jquery_ui');
 if (!function_exists('load_jquery_ui')) {
 function load_jquery_ui() {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung')) 
-    	wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', false, '1.11.4');
+    if (!is_page('anmeldung')) return;
+
+    wp_enqueue_style('jquery-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', false, '1.11.4');
 }
 }
 
@@ -99,5 +100,11 @@ add_action('wp_enqueue_scripts', 'load_font_awesome');
 if (!function_exists('load_font_awesome')) {
 function load_font_awesome() {
 	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.4.0/css/font-awesome.min.css', false, '4.4.0');
+}
+}
+
+if (!function_exists('isPageWithForm')) {
+function isPageWithForm() {
+	return is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein') || is_page('wir-erwarten-euch-an-halloween-2015');
 }
 }
