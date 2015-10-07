@@ -25,10 +25,12 @@
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<a href="//leipzigmisteriosa.de/imprint">Imprint</a>
-			&nbps;-&nbsp;
+			&nbsp;
+			-
+			&nbsp;
 			<a href="//leipzigmisteriosa.de/privacy">Privacy</a>
 			<br />
-			Leipzig Misteriosa made with Love, Coffee and lots of Open Source in Leipzig.
+			Leipzig Misteriosa made with <i class="fa fa-inverse fa-heart"></i>, <i class="fa fa-inverse fa-coffee"></i> and lots of Open Source in Leipzig.
 			<br />
 			Leipzig Misteriosa is a project by <a href="//gruseltour-leipzig.de">Gruseltour Leipzig</a>
 		</div><!-- .site-info -->
