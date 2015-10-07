@@ -25,7 +25,9 @@
 	<footer id="colophon" role="contentinfo">
 		<div class="site-info">
 			<a href="//gruseltour-leipzig.de/impressum">Impressum</a>
-			&nbps;-&nbsp;
+			&nbsp;
+			-
+			&nbsp; 
 			<a href="//gruseltour-leipzig.de/datenschutz">Datenschutz</a>
 			<br />
 			Gruseltour Leipzig made with Love, Coffee and lots of Open Source in Leipzig.
