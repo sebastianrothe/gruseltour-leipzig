@@ -30,6 +30,6 @@ function cleanDisabledDateString(dirtyString) {
 }
 
 function transformDateLinesToArray(lines) {
-  // clean, split and parseToGerman
+  // clean, split and parseToSpanish
   return jQuery.map(cleanDisabledDateString(lines).split("\n"), stringToSpanishDateString);
 }
