@@ -1,3 +1,188 @@
-/*
-	The Leipzig Misteriosa Theme
-*/
+/* The Leipzig Misteriosa Theme */
+
+/* Silbentrennung deaktivieren */
+.site-content article,
+.widget-area .widget {
+	word-wrap: normal !important;
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	hyphens: none;
+}
+
+/* linker und rechter Abstand verringern */
+/* 		padding: 0 40px;
+		padding: 0 2.857142857rem;
+		margin-top: 48px;
+		margin-top: 3.428571429rem;
+		margin-bottom: 48px;
+		margin-bottom: 3.428571429rem; */
+/* Minimum width of 960 pixels. */
+@media screen and (min-width: 960px) {
+	body .site {
+		padding: 0 20px !important;
+		padding: 0 1.428571428rem !important;
+		margin-top: 20px !important;
+		margin-top: 1.714285714rem !important;
+		margin-bottom: 20px !important;
+		margin-bottom: 1.714285714rem !important;
+	}
+}
+
+/* vorher 960px und 68.571428571rem */
+@media screen and (min-width: 600px) {
+	.site {
+		max-width: 1024px !important;
+		max-width: 75.571428571rem !important;
+	}
+}
+
+/* Gruseltour Styles */
+.header-image {
+ 	margin-top: 0;
+}
+
+/* no outlines */
+a:focus {
+  outline: none;
+}
+
+/* Datepicker */
+.ui-state-default, .ui-widget-content .ui-state-default {
+    border: 1px solid #D3D3D3;
+    background: #E6E6E6;
+    font-weight: normal;
+    color: #555;
+}
+
+.ui-datepicker .ui-state-disabled.available .ui-state-default, .ui-datepicker .ui-state-disabled.not-available .ui-state-default {
+    background: #CCC;
+    text-decoration: line-through;
+}
+
+.ui-datepicker .not-available .ui-state-default {
+	background: #FDCBCC;
+    border-color: #FDCBCC;
+}
+
+.ui-datepicker .available .ui-state-default {
+	background: #C5E8A5;
+	border-color: #C5E8A5;
+}
+
+.ui-state-disabled, .ui-widget-content .ui-state-disabled {
+    opacity: 0.35;
+    background-image: none;
+}
+
+.ui-datepicker.readonly {
+	background: white;
+	cursor: pointer;
+}
+
+/* Formular */
+form input {
+	font-size: 1em;
+}
+
+/* Buchen-Button */
+/* TODO: css to button */
+.buchen-div {
+	position: fixed;
+	border: 1px solid #fff;
+	background-color: #fdfdfd;
+	bottom: 0;
+	right: 0;
+	padding-right: 10px;
+	padding-bottom: 10px;
+	padding-top: 10px;
+	padding-left: 12px;
+	border-radius: 2px 0 0 2px;
+	-moz-border-radius: 2px 0 0 2px;
+	-webkit-border-radius: 2px 0 0 2px;
+	-moz-box-shadow: 0 0 5px #fff;
+	-webkit-box-shadow: 0 0 5px#fff;
+	box-shadow: 0 0 5px #fff;
+}
+
+.buchen-div:hover {
+	-moz-box-shadow: 0 0 20px #fff;
+	-webkit-box-shadow: 0 0 20px#fff;
+	box-shadow: 0 0 20px #fff;
+	padding-top: 10px;
+}
+
+.buchen-div a.buchen-button {
+	color: #000;
+	font-weight: bold;
+	text-decoration: none;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+/* mobile only */
+@media screen and (max-width: 600px) {
+	footer .site-info {
+		padding-bottom: 2em;
+	}
+
+	.buchen-div {
+		padding-left: 10px;
+		width: 100%;
+		text-align: center;
+	}
+}
+
+/* Slideshow */
+#slideshow {
+	height: 400px;
+	width: 100%;
+	background-color: #000;
+	position: relative;
+}
+
+#slideshow figure {
+	margin: 0;
+}
+
+#slideshow img {
+	max-height: 400px;
+	width: auto;
+	z-index: 8;
+	opacity: 0;
+	position: absolute;
+	left: 0;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#slideshow IMG.active {
+	z-index: 10;
+	opacity: 1;
+}
+
+#slideshow IMG.last-active {
+	z-index: 9;
+}
+
+#slideshow figcaption {
+	color: white;
+	position: absolute;
+	bottom: 0;
+	z-index: 9;
+	opacity: 0;
+	background: #000;
+	width: 100%;
+	text-align: center;
+	font-size: 1.3em;
+	font-style: italic;
+}
+
+#slideshow figcaption.active {
+	z-index: 11;
+	opacity: .5;
+}
+
+#slideshow figcaption.last-active {
+	z-index: 10;
+}
