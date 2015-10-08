@@ -12,7 +12,7 @@
 	});
 
 	/* Das Eingabefeld ist nur noch read-only */
-	$datumseingabe.addClass('ui-datepicker-readonly');
+	$datumseingabe.addClass('readonly');
 	$datumseingabe.prop('readonly', true);
   };
 
@@ -36,7 +36,7 @@
 			showMonthAfterYear: false,
 			yearSuffix: '',
 		    numberOfMonths: 1,
-		    showWeek: true
+		    showWeek: false
 		};
 		jQuery.datepicker.setDefaults(jQuery.datepicker.regional["de"]);
 	};
