@@ -84,3 +84,10 @@ add_action('wp_enqueue_scripts', 'load_font_awesome');
 function load_font_awesome() {
 	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.4.0/css/font-awesome.min.css', false, '4.4.0');
 }
+
+// Exclude Posts with following id
+add_filter('bwp_gxs_excluded_posts', 'bwp_gxs_exclude_posts', 10, 2);
+function bwp_gxs_exclude_posts($excluded_posts, $post_type)
+{
+	return array(9,11);
+}
