@@ -87,6 +87,13 @@ function load_font_awesome() {
 	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.4.0/css/font-awesome.min.css', false, '4.4.0');
 }
 
+// Exclude Posts with following id
+add_filter('bwp_gxs_excluded_posts', 'bwp_gxs_exclude_posts', 10, 2);
+function bwp_gxs_exclude_posts($excluded_posts, $post_type)
+{
+	return array(12,157,1356,1846);
+}
+
 function isPageWithForm() {
 	return is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein') || is_page('wir-erwarten-euch-an-halloween-2015');
 }
