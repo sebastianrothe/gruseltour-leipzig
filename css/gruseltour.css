@@ -132,6 +132,11 @@ form input {
 	}
 }
 
+/* Images */
+img.alignleft, .wp-caption.alignleft {
+	border-top: 0px !important;
+}
+
 /* Slideshow */
 #slideshow {
 	height: 400px;
