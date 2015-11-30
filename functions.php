@@ -84,7 +84,7 @@ function load_jquery_ui() {
  */
 add_action('wp_enqueue_scripts', 'load_font_awesome');
 function load_font_awesome() {
-	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.4.0/css/font-awesome.min.css', false, '4.4.0');
+	wp_enqueue_style('prefix-font-awesome', get_stylesheet_directory_uri() . '/font-awesome-4.5.0/css/font-awesome.min.css', false, '4.5.0');
 }
 
 // Exclude Posts with following id
@@ -92,6 +92,12 @@ add_filter('bwp_gxs_excluded_posts', 'bwp_gxs_exclude_posts', 10, 2);
 function bwp_gxs_exclude_posts($excluded_posts, $post_type)
 {
 	return array(12,157,1356,1846);
+}
+
+// Change form confirmation message
+add_filter( 'grunion_contact_form_success_message', 'change_grunion_success_message' );
+function change_grunion_success_message($msg) {
+	return '<h3>' . 'Vielen Dank für deine Anfrage.<br />Wir beantworten jede Anfrage innerhalb weniger Stunden. Solltest du dennoch nach 1 Tag keine Antwort von uns erhalten, schau bitte in deinem Spam-Ordner nach.<br />Besonders bei Web.de und GMX-Mailadressen landen wir oft im Spam-Ordner. ' . '</h3>';
 }
 
 function isPageWithForm() {
