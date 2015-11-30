@@ -15,7 +15,7 @@
 		<!-- Telefon Button -->
 
 		<!-- Buchen Button -->
-		<?php if (!is_page('anmeldung') && !is_page('wir-erwarten-euch-an-halloween-2015') && !is_page('elite-gruseltour') && !is_page('wave-gotik-treffen-2015-wgt')) { ?>
+		<?php if (!isPageWithForm()) { ?>
 		<div class="buchen-div">
 			<a class="buchen-button" href="//gruseltour-leipzig.de/anmeldung">Gruseltour hier buchen!</a>
 		</div>
