@@ -10,14 +10,10 @@
  * @since Twenty Twelve 1.0
  */
 ?>
-		<!-- Mail Button -->
-
-		<!-- Telefon Button -->
-
 		<!-- Buchen Button -->
 		<?php if (!isPageWithForm()) { ?>
-		<div class="buchen-div">
-			<a class="buchen-button" href="//gruseltour-leipzig.de/anmeldung">Gruseltour hier buchen!</a>
+		<div class="buchen-div" onclick="jQuery('#booknow-button').click();">
+			<a id="booknow-button" class="buchen-button" href="//gruseltour-leipzig.de/anmeldung">Gruseltour hier buchen!</a>
 		</div>
 		<?php } ?>
 	</div><!-- #main .wrapper -->
