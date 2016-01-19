@@ -47,6 +47,7 @@ a:focus {
 }
 
 /* Datepicker */
+/*
 .ui-state-default, .ui-widget-content .ui-state-default {
     border: 1px solid #D3D3D3;
     background: #E6E6E6;
@@ -73,19 +74,68 @@ a:focus {
     opacity: 0.35;
     background-image: none;
 }
+*/
+
+.ui-datepicker .ui-datepicker-header {
+	border: 1px solid #fff;
+	background: #fff;
+}
+
+.ui-datepicker-calendar .ui-state-default {
+  border: 1px solid #FFF;
+  background: #FFF;
+  color: #555;
+  font-weight: normal;
+  text-align: center;
+}
+
+/*
+.ui-datepicker .ui-datepicker-unselectable {
+  border: 1px solid #D3D3D3;
+  border-collapse: collapse;
+}
+
+.ui-datepicker .ui-datepicker-unselectable.ui-state-disabled {
+  border: 1px solid #D3D3D3;
+  border-collapse: collapse;
+}
+
+.ui-datepicker-calendar .ui-datepicker-today .ui-state-active.ui-state-highlight {
+  border: 1px solid blue;
+}
+
+.ui-datepicker-calendar .not-available .ui-state-default {
+  background: #FDCBCC;
+  border-color: #FDCBCC;
+}
+
+.ui-datepicker-calendar .available .ui-state-default {
+  background: #C5E8A5;
+  border-color: #C5E8A5;
+}
+*/
+
+
+.ui-datepicker-calendar .ui-state-hover {
+	border: 1px solid #555;
+	background: #555;
+	color: #E6E6E6;
+}
 
 .ui-datepicker.readonly {
 	background: white;
+}
+
+.ui-datepicker.hasDatepicker {
 	cursor: pointer;
 }
 
 /* Formular */
 form input {
-	font-size: 1em;
+	font-size: 1rem;
 }
 
 /* Buchen-Button */
-/* TODO: css to button */
 .buchen-div {
 	position: fixed;
 	border: 1px solid #fff;
@@ -102,6 +152,7 @@ form input {
 	-moz-box-shadow: 0 0 5px #fff;
 	-webkit-box-shadow: 0 0 5px#fff;
 	box-shadow: 0 0 5px #fff;
+	cursor: pointer;
 }
 
 .buchen-div:hover {
@@ -111,7 +162,7 @@ form input {
 	padding-top: 10px;
 }
 
-.buchen-div a.buchen-button {
+.buchen-div .buchen-button {
 	color: #000;
 	font-weight: bold;
 	text-decoration: none;
