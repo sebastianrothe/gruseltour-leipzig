@@ -1,4 +1,5 @@
-jQuery(document).ready(function() {
+"use strict";
+jQuery(document).ready(function () {
 	// anmeldung
 	jQuery('div#contact-form-18 blockquote').hide();
 	// geschenkgutschein

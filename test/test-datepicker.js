@@ -1,3 +1,4 @@
+"use strict";
 var Util = window.gruseltourApp.Util;
 var helper = window.gruseltourApp.dateHelper();
 
