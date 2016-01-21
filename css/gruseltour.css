@@ -104,7 +104,8 @@ a:focus {
   border: 1px solid blue;
 }
 
-.ui-datepicker-calendar .not-available .ui-state-default {
+.ui-datepicker-calendar .not-available .ui-state-default,
+.ui-datepicker-calendar .fully-booked .ui-state-default {
   background: #FDCBCC;
   border-color: #FDCBCC;
 }
@@ -115,6 +116,11 @@ a:focus {
 }
 */
 
+.ui-datepicker-calendar .not-available .ui-state-default,
+.ui-datepicker-calendar .fully-booked .ui-state-default {
+  background: #FDCBCC;
+  border-color: #FDCBCC;
+}
 
 .ui-datepicker-calendar .ui-state-hover {
 	border: 1px solid #555;
