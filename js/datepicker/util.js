@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 (function (gruseltourApp) {
   var augmentStringWithFormat = (function () {
     if (String.prototype.format) { // First, checks if it isn't implemented yet.
@@ -11,7 +11,7 @@
         return args[number] !== 'undefined' ? args[number] : match;
       });
     };
-  }());
+  }()); // augment the format function now!
 
   // package namespace
   gruseltourApp.util = {
@@ -20,25 +20,33 @@
     },
 
     toGermanDateString: function (date) {
-      var day = gruseltourApp.util.padZero(date.getDate()),
+      var day = gruseltourApp.util.padZero(date.getDate()), // getDate() returns the day of the month, where as getDay() returns which day of the week it is
           month = gruseltourApp.util.padZero(date.getMonth() + 1),
           year = date.getFullYear();
-      return "{0}.{1}.{2}".format(day, month, year);
+      return '{0}.{1}.{2}'.format(day, month, year);
     },
 
     toGermanTimeString: function (date) {
-      var hour = gruseltourApp.util.padZero(date.getHours()),
-          minute = gruseltourApp.util.padZero(date.getMinutes());
-      return "{0}:{1}".format(hour, minute);
+      var hour = this.padZero(date.getHours()),
+          minute = this.padZero(date.getMinutes());
+      return '{0}:{1}'.format(hour, minute);
     },
 
     parseGermanDate: function (dateString) {
+      dateString = dateString || '';
+
       var createDate = function (parts) {
+        if (!parts || parts.length < 2) {
+          console.log('Cannot parse the Date ' + parts);
+          return {};
+        }
+
         var day = parts[2], 
             month = parts[1] - 1, 
             year = parts[0];
         return new Date(day, month, year);
       };
+
       return createDate(dateString.split('.'));
     },
 
@@ -52,14 +60,12 @@
     },
 
     // clean, split and parseToGerman
-    transformDateLinesToArray: function (lines) { 
-      var getSplittedCleanedLines = function () {
-        var getCleanedLines = function () {
-          return gruseltourApp.util.cleanDisabledDateString(lines);
-        };
-        return getCleanedLines().split("\n");
-      };
-      return jQuery.map(getSplittedCleanedLines(), gruseltourApp.util.stringToGermanDateString);
+    transformDateLinesToArray: function (lines) {
+      var cleanedLines = this.cleanDisabledDateString(lines);
+      var splittedCleanedLines = cleanedLines.split('\n');
+
+      // within jQuery.map, this refers to the global object
+      return jQuery.map(splittedCleanedLines, gruseltourApp.util.stringToGermanDateString);
     }
   };
 }(window.gruseltourApp = window.gruseltourApp || {})); // create global namespace and run it
