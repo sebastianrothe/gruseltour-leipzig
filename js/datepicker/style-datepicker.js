@@ -1,35 +1,27 @@
-"use strict";
+'use strict';
 (function (gruseltourApp) {
 	gruseltourApp.init = function () {
 	  	var dataProvider = gruseltourApp.produceDataProvider(), 
 	  		dateChecker = gruseltourApp.produceDateChecker(dataProvider);
 
-	  	var datepickerInjectionPoint = (function () {
-	  		// get the 2nd inputfield with type text
-	  		return jQuery("#contact-form-18 input.text").eq(1);
-	  	}());
-
-		if (datepickerInjectionPoint.length === 0) {
+	  	var datepickerInjectionPoint = jQuery('#contact-form-18 input.text').eq(1); // get the 2nd inputfield
+		if (!datepickerInjectionPoint.length) {
 			console.log('Could not find injection point for the datepicker.');
 			return;
 		}
 
-		var createDatepicker = (function (element, dateChecker) {
-			// inject the datepicker
-		    element.datepicker({
-		    	// minDate: today
-				minDate: 0,
-				// is this day already fully booked ?
-				beforeShowDay: dateChecker.isAvailable
-			});
-		}(datepickerInjectionPoint, dateChecker));
+		// inject the datepicker
+	    datepickerInjectionPoint.datepicker({
+	    	// minDate: today
+			minDate: 0,
+			// is this day already fully booked ?
+			beforeShowDay: dateChecker.isAvailable
+		});
 
-		var augmentDatepicker = (function (element) {
-			// set datepicker input field to readonly
-			var setReadonlyFlag = (function (element) {
-				element.addClass('readonly');
-				element.prop('readonly', true);
-			}(element));
+		// set datepicker input field to readonly
+		var setReadonlyFlag = (function (element) {
+			element.addClass('readonly');
+			element.prop('readonly', true);
 		}(datepickerInjectionPoint));
 	};
 
@@ -41,28 +33,37 @@
 			_generateHTMLOriginal: jQuery.datepicker._generateHTML,
 
 			generateFooter: function (legendOptions) {
-				var TEXT_LAST_REFRESHED = "Zuletzt aktualisiert: Heute, um",
+				// TODO: refactor to support locale
+				var TEXT_LAST_REFRESHED = 'Zuletzt aktualisiert: Heute, um',
 					TEXT_LAST_REFRESHED_TIME = gruseltourApp.util.toGermanTimeString(new Date());
-					
-				var html = "<div class='ui-datepicker-footer'>";
-				html += "<hr class='clear' />";
-				html += "<ul class='legend'>";
 
-				jQuery.each(legendOptions, function (index, legend) {
-					html += "<li><div class='{0}'>{1}</div></li>".format(legend.style, legend.title);
-				});
+				var html = '<div class="ui-datepicker-footer">' + 
+							'<hr class="clear" />';
+				var items = [];
 
-				html += "</ul>";
-				html += "<hr class='clear' />";
-				html += "<div class='lastRefreshDate'>{0} {1}</div>".format(TEXT_LAST_REFRESHED, TEXT_LAST_REFRESHED_TIME);
-				html += "</div>";
+				// validate argument
+				legendOptions = legendOptions || [];
+				
+				// go through legendOptions and map properties to html code
+				var length = legendOptions.length;
+				if (length) {
+					for (var i = 0; i < length; i += 1) {
+						// use direct assignment in this case because we're micro-optimizing.
+						var legend = legendOptions[i];
+						items[i] = '<li><div class="color {0}" /><div>{1}</div></li>'.format(legend.style, legend.title);
+					}
+					html += '<ul class="legend">' + items.join('') + '</ul>';
+				}
+
+				html += '<div class="lastRefreshDate">{0} {1}</div>'.format(TEXT_LAST_REFRESHED, TEXT_LAST_REFRESHED_TIME) + 
+						'</div>';
 				return html;
 			},
 
 			_generateHTML: function (inst) {
 				var legendOptions = [htmlEntities.getDisabledObject()];
-				var newHTML = this.generateFooter(legendOptions);
-	    		return this._generateHTMLOriginal(inst) + newHTML;
+				var footerHTML = this.generateFooter(legendOptions);
+	    		return this._generateHTMLOriginal(inst) + footerHTML;
 			}
 		});
 	};
