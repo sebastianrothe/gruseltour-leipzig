@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 (function (gruseltourApp) {
 	gruseltourApp.produceDateHelper = function () {
 		var DATE_FRIDAY = 5, DATE_SATURDAY = 6, DATE_SUNDAY = 0;
@@ -22,10 +22,10 @@
 	};
 
 	gruseltourApp.produceHTMLEntities = function () {
-		var disabledText = "Die Tour ist an diesem Tag schon ausgebucht.",
-			disabledStyleClass = "fully-booked",
-			noRegularTourText = "An diesem Tag findet keine reguläre Tour statt.",
-			noRegularTourStyleClass = "not-available";
+		var disabledText = 'Die Tour ist an diesem Tag schon ausgebucht.',
+			disabledStyleClass = 'full',
+			noRegularTourText = 'An diesem Tag findet keine reguläre Tour statt.',
+			noRegularTourStyleClass = 'not-available';
 		
 		return {
 			getDisabledObject: function () {
