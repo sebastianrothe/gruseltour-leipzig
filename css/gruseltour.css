@@ -41,102 +41,10 @@
  	margin-top: 0;
 }
 
-/* no outlines */
 a:focus {
   outline: none;
 }
 
-/* Datepicker */
-/*
-.ui-state-default, .ui-widget-content .ui-state-default {
-    border: 1px solid #D3D3D3;
-    background: #E6E6E6;
-    font-weight: normal;
-    color: #555;
-}
-
-.ui-datepicker .ui-state-disabled.available .ui-state-default, .ui-datepicker .ui-state-disabled.not-available .ui-state-default {
-    background: #CCC;
-    text-decoration: line-through;
-}
-
-.ui-datepicker .not-available .ui-state-default {
-	background: #FDCBCC;
-    border-color: #FDCBCC;
-}
-
-.ui-datepicker .available .ui-state-default {
-	background: #C5E8A5;
-	border-color: #C5E8A5;
-}
-
-.ui-state-disabled, .ui-widget-content .ui-state-disabled {
-    opacity: 0.35;
-    background-image: none;
-}
-*/
-
-.ui-datepicker .ui-datepicker-header {
-	border: 1px solid #fff;
-	background: #fff;
-}
-
-.ui-datepicker-calendar .ui-state-default {
-  border: 1px solid #FFF;
-  background: #FFF;
-  color: #555;
-  font-weight: normal;
-  text-align: center;
-}
-
-/*
-.ui-datepicker .ui-datepicker-unselectable {
-  border: 1px solid #D3D3D3;
-  border-collapse: collapse;
-}
-
-.ui-datepicker .ui-datepicker-unselectable.ui-state-disabled {
-  border: 1px solid #D3D3D3;
-  border-collapse: collapse;
-}
-
-.ui-datepicker-calendar .ui-datepicker-today .ui-state-active.ui-state-highlight {
-  border: 1px solid blue;
-}
-
-.ui-datepicker-calendar .not-available .ui-state-default,
-.ui-datepicker-calendar .fully-booked .ui-state-default {
-  background: #FDCBCC;
-  border-color: #FDCBCC;
-}
-
-.ui-datepicker-calendar .available .ui-state-default {
-  background: #C5E8A5;
-  border-color: #C5E8A5;
-}
-*/
-
-.ui-datepicker-calendar .not-available .ui-state-default,
-.ui-datepicker-calendar .fully-booked .ui-state-default {
-  background: #FDCBCC;
-  border-color: #FDCBCC;
-}
-
-.ui-datepicker-calendar .ui-state-hover {
-	border: 1px solid #555;
-	background: #555;
-	color: #E6E6E6;
-}
-
-.ui-datepicker.readonly {
-	background: white;
-}
-
-.ui-datepicker.hasDatepicker {
-	cursor: pointer;
-}
-
-/* Formular */
 form input {
 	font-size: 1rem;
 }
@@ -194,57 +102,35 @@ img.alignleft, .wp-caption.alignleft {
 	border-top: 0px !important;
 }
 
-/* Slideshow */
-#slideshow {
-	height: 400px;
-	width: 100%;
-	background-color: #000;
-	position: relative;
+/* Team Page */
+.teamMemberImage {
+	margin-top: 0 !important;
 }
 
-#slideshow figure {
-	margin: 0;
+.teamMemberTitle {
+	font-weight: bold;
+	font-size: 1.2rem;
 }
 
-#slideshow img {
-	max-height: 400px;
-	width: auto;
-	z-index: 8;
-	opacity: 0;
-	position: absolute;
-	left: 0;
-	right: 0;
-	margin-left: auto;
-	margin-right: auto;
+.teamMemberText {
+	text-align: justify;
 }
 
-#slideshow IMG.active {
-	z-index: 10;
-	opacity: 1;
+/* the paragraph with the new image should clear the float from the left floating image */
+.teamMemberText + p {
+	clear: left;
+	padding-top: 20px;
+	margin-bottom: 0;
 }
 
-#slideshow IMG.last-active {
-	z-index: 9;
+/* this is a paragraph just to clear the float, which should not be visible */
+.teamMemberImageBreakLine {
+	clear: left;
+	visibility: hidden;
+	margin-bottom: 0 !important;
 }
 
-#slideshow figcaption {
-	color: white;
-	position: absolute;
-	bottom: 0;
-	z-index: 9;
-	opacity: 0;
-	background: #000;
-	width: 100%;
-	text-align: center;
-	font-size: 1.3em;
-	font-style: italic;
-}
-
-#slideshow figcaption.active {
-	z-index: 11;
-	opacity: .5;
-}
-
-#slideshow figcaption.last-active {
-	z-index: 10;
+/* Images */
+.alignleft, .wp-caption.alignleft {
+	margin-top: 0 !important;
 }
