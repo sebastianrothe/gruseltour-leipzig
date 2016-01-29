@@ -20,7 +20,8 @@
     },
 
     toGermanDateString: function (date) {
-      var day = gruseltourApp.util.padZero(date.getDate()), // getDate() returns the day of the month, where as getDay() returns which day of the week it is
+      // getDate() returns the day of the month, where as getDay() returns which day of the week it is
+      var day = gruseltourApp.util.padZero(date.getDate()), 
           month = gruseltourApp.util.padZero(date.getMonth() + 1),
           year = date.getFullYear();
       return '{0}.{1}.{2}'.format(day, month, year);
@@ -68,4 +69,5 @@
       return jQuery.map(splittedCleanedLines, gruseltourApp.util.stringToGermanDateString);
     }
   };
-}(window.gruseltourApp = window.gruseltourApp || {})); // create global namespace and run it
+// create global namespace and run it
+}(window.gruseltourApp = window.gruseltourApp || {})); 
