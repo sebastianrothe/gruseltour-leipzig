@@ -5,7 +5,8 @@
 }
 
 .ui-datepicker table {
-  font-size: 13px;
+  font-size: .8rem;
+  margin-bottom: 1rem;
 }
 
 .ui-datepicker th,
@@ -17,8 +18,8 @@
 .ui-datepicker th {
   text-transform: uppercase;
   color: #E3797D;
-  font-size: .8em;
-  padding-bottom: 1em;
+  font-size: .8rem;
+  padding-bottom: 1rem;
 }
 
 .ui-datepicker .ui-datepicker-header {
@@ -26,19 +27,19 @@
   border-radius: 0;
   background: #4ECDC4;
   color: #fff;
-  margin-bottom: 2em;
+  margin-bottom: 1rem;
 }
 
 .ui-datepicker .ui-datepicker-title {
   line-height: 1;
-  padding: 3em 0;
+  padding: 1rem 0;
   text-transform: uppercase;
 }
 
 .ui-datepicker .ui-datepicker-month {
   display: block;
-  font-size: 1.8em;
-  margin-bottom: .4em;
+  font-size: 1.8rem;
+  margin-bottom: 1rem;
 }
 
 .ui-datepicker .ui-datepicker-year {
@@ -86,7 +87,7 @@
   text-align: center;
 }
 
-.ui-datepicker td.ui-datepicker-current-day .ui-state-default,
+.ui-datepicker .ui-datepicker-current-day .ui-state-default,
 .ui-datepicker .ui-state-hover {
   background: #4ECDC4;
   color: #fff;
@@ -108,17 +109,20 @@
 }
 
 /* Footer with legend */
+/*
 .ui-datepicker .ui-datepicker-footer {
 
-}
+}*/
 
 .ui-datepicker .ui-datepicker-footer .legend {
   list-style: none;
-  padding: 0 0 0 10px;
+  padding: 0 0 5px 18px;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend li {
   float: left;
+  font-size: .7rem;
+  width: 100px;
 }
 
 .ui-datepicker .ui-datepicker-footer .legend .color {
@@ -140,7 +144,7 @@
 }
 
 .ui-datepicker .ui-datepicker-footer .lastRefreshDate {
-  font-size: 0.7rem;
-  margin-bottom: 0.5rem;
+  font-size: .5rem;
+  margin: 1rem 0 .5rem;
   padding-left: 10px;
 }
