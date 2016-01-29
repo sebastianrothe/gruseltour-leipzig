@@ -25,7 +25,9 @@ function twentytwelve_content_nav( $nav_id ) {
 
 // OpenGraph Images for the frontpage, the ones from YOAST via the Post are not correct
 function add_ogimages_for_frontpage() {
-	if (!is_front_page()) return;
+	if (!is_front_page()) {
+        return;
+    }
 
 	$output = '<meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2013/05/button-scary.png" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/05/cropped-grusel-poster-a3.jpg" /><meta property="og:image" content="http://gruseltour-leipzig.de/wordpress/wp-content/uploads/2014/06/1.jpg" />';
 	echo $output;	
@@ -44,7 +46,9 @@ function load_datepicker_scripts() {
     wp_register_script('datepicker-script', get_stylesheet_directory_uri() . '/js/datepicker.js');
 
     // Let's enqueue a script only to be used on a specific page of the site
-    if (!is_page('anmeldung')) return;
+    if (!is_page('anmeldung')) { 
+        return;
+    }
 
     // Enqueue a script that has both jQuery (automatically registered by WordPress)
     // and my-script (registered earlier) as dependencies.
@@ -58,12 +62,17 @@ add_action('wp_footer', 'load_datepicker_scripts');
  * change display of values after form submit
  */
 function isPageWithForm() {
-	return is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein') || is_page('wir-erwarten-euch-an-halloween-2015');
+	return is_page('anmeldung') 
+        || is_page('wave-gotik-treffen-2015-wgt') 
+        || is_page('geschenkgutschein') 
+        || is_page('wir-erwarten-euch-an-halloween-2015');
 }
 
 function hide_form_values_scripts() {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (!isPageWithForm()) return;
+    if (!isPageWithForm()) {
+        return;
+    }
 
     // Enqueue a script that has both jQuery (automatically registered by WordPress)
     wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'), true);
@@ -106,4 +115,4 @@ add_filter('bwp_gxs_excluded_posts', 'bwp_gxs_exclude_posts', 10, 2);
 function change_grunion_success_message($msg) {
 	return '<h3>' . 'Vielen Dank für deine Anfrage.<br />Wir beantworten jede Anfrage innerhalb weniger Stunden. Solltest du dennoch nach 1 Tag keine Antwort von uns erhalten, schau bitte in deinem Spam-Ordner nach.<br />Besonders bei Web.de und GMX-Mailadressen landen wir leider häufig im Spam-Ordner. ' . '</h3>';
 }
-add_filter( 'grunion_contact_form_success_message', 'change_grunion_success_message' );
+add_filter('grunion_contact_form_success_message', 'change_grunion_success_message');
