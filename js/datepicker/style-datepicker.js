@@ -4,7 +4,8 @@
 	  	var dataProvider = gruseltourApp.produceDataProvider(), 
 	  		dateChecker = gruseltourApp.produceDateChecker(dataProvider);
 
-	  	var datepickerInjectionPoint = jQuery('#contact-form-18 input.text').eq(1); // get the 2nd inputfield
+	  	// get the 2nd inputfield
+	  	var datepickerInjectionPoint = jQuery('#contact-form-18 input.text').eq(1); 
 		if (!datepickerInjectionPoint.length) {
 			console.log('Could not find injection point for the datepicker.');
 			return;
@@ -37,8 +38,7 @@
 				var TEXT_LAST_REFRESHED = 'Zuletzt aktualisiert: Heute, um',
 					TEXT_LAST_REFRESHED_TIME = gruseltourApp.util.toGermanTimeString(new Date());
 
-				var html = '<div class="ui-datepicker-footer">' + 
-							'<hr class="clear" />';
+				var html = '<div class="ui-datepicker-footer">';
 				var items = [];
 
 				// validate argument
@@ -50,9 +50,11 @@
 					for (var i = 0; i < length; i += 1) {
 						// use direct assignment in this case because we're micro-optimizing.
 						var legend = legendOptions[i];
+						// class=color will always be assigned
 						items[i] = '<li><div class="color {0}" /><div>{1}</div></li>'.format(legend.style, legend.title);
 					}
-					html += '<ul class="legend">' + items.join('') + '</ul>';
+					html += '<ul class="legend">' + items.join('') + '</ul>' + 
+							'<hr class="clear" />';
 				}
 
 				html += '<div class="lastRefreshDate">{0} {1}</div>'.format(TEXT_LAST_REFRESHED, TEXT_LAST_REFRESHED_TIME) + 
@@ -67,7 +69,8 @@
 			}
 		});
 	};
-}(window.gruseltourApp = window.gruseltourApp || {})); // create global namespace and run it
+// create global namespace and run it
+}(window.gruseltourApp = window.gruseltourApp || {})); 
 
 // Only include at end of main application...
 jQuery(document).ready(function () {
