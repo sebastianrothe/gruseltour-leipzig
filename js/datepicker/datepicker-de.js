@@ -27,7 +27,6 @@ datepicker.regional.de = {
 	isRTL: false,
 	showMonthAfterYear: false,
 	yearSuffix: "" };
-	
 datepicker.setDefaults( datepicker.regional.de );
 return datepicker.regional.de;
 } ) );

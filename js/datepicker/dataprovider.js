@@ -11,7 +11,8 @@
 			});
 			*/
 			disabledTourDays = gruseltourApp.util.transformDateLinesToArray('19.2.2016');
-		}()); // run this on loading this object
+		// run this immediately on parsing this object
+		}()); 
 
 		return {
 			getData: function () {
@@ -19,4 +20,4 @@
 			}
 		};
 	};
-}(window.gruseltourApp = gruseltourApp || {}));
+}(window.gruseltourApp = window.gruseltourApp || {}));
