@@ -1,9 +1,9 @@
 <?php
 // include parent stylesheet
-add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 function theme_enqueue_styles() {
     wp_enqueue_style('parent-style', get_template_directory_uri() . '/style.css');
 }
+add_action('wp_enqueue_scripts', 'theme_enqueue_styles');
 
 // Use WP-PageNavi when it's active
 function twentytwelve_content_nav( $nav_id ) {
@@ -32,11 +32,11 @@ function add_ogimages_for_frontpage() {
 }
 add_action('wp_head','add_ogimages_for_frontpage');
 
-function add_cookie_warning() {
-	$output = '<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent --><script type="text/javascript">    window.cookieconsent_options = {"message":"Diese Webseite benutzt Cookies, denn auf der dunklen Seite gibt es immer Kekse.","dismiss":"Okay","learnMore":"Mehr Informationen","link":"//gruseltour-leipzig.de/datenschutz/","theme":"dark-top"};</script><script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script><!-- End Cookie Consent plugin -->';
-	echo $output;	
-}
-add_action('wp_head','add_cookie_warning');
+// function add_cookie_warning() {
+// 	$output = '<!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent --><script type="text/javascript">    window.cookieconsent_options = {"message":"Diese Webseite benutzt Cookies, denn auf der dunklen Seite gibt es immer Kekse.","dismiss":"Okay","learnMore":"Mehr Informationen","link":"//gruseltour-leipzig.de/datenschutz/","theme":"dark-top"};</script><script type="text/javascript" src="//s3.amazonaws.com/cc.silktide.com/cookieconsent.latest.min.js"></script><!-- End Cookie Consent plugin -->';
+// 	echo $output;	
+// }
+// add_action('wp_head','add_cookie_warning');
 
 function load_datepicker_scripts() {
 	// Use `get_stylesheet_directoy_uri() if your script is inside your theme or child theme.
@@ -55,7 +55,7 @@ function load_datepicker_scripts() {
 add_action('wp_footer', 'load_datepicker_scripts');
 
 /**
- * Formularanzeige ändern
+ * change display of values after form submit
  */
 function isPageWithForm() {
 	return is_page('anmeldung') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein') || is_page('wir-erwarten-euch-an-halloween-2015');
@@ -70,11 +70,21 @@ function hide_form_values_scripts() {
 }
 add_action('wp_footer', 'hide_form_values_scripts');
 
+function load_gruseltour_styles() {
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/twentytwelve-dark.css', false, '1.0.0');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/gruseltour.css', false, '1.0.0');
+}
+add_action('wp_enqueue_scripts', 'load_gruseltour_styles');
+
 function load_jquery_ui_style_and_i18n() {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (!is_page('anmeldung')) return;
+    if (!is_page('anmeldung')) { 
+        return;
+    }
 
     wp_enqueue_style('jquery-ui-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', ('jquery'), '1.11.4');
+    wp_enqueue_style('datepicker-style', get_stylesheet_directory_uri() . '/css/datepicker.css', false, '1.0.0');
+
     wp_enqueue_script('jquery-ui-i18n-de', '//github.com/jquery/jquery-ui/raw/master/ui/i18n/datepicker-de.js', ('jquery'), '1.11.4', true);
 }
 add_action('wp_enqueue_scripts', 'load_jquery_ui_style_and_i18n');
@@ -94,6 +104,6 @@ add_filter('bwp_gxs_excluded_posts', 'bwp_gxs_exclude_posts', 10, 2);
 
 // Change form confirmation message
 function change_grunion_success_message($msg) {
-	return '<h3>' . 'Vielen Dank für deine Anfrage.<br />Wir beantworten jede Anfrage innerhalb weniger Stunden. Solltest du dennoch nach 1 Tag keine Antwort von uns erhalten, schau bitte in deinem Spam-Ordner nach.<br />Besonders bei Web.de und GMX-Mailadressen landen wir oft im Spam-Ordner. ' . '</h3>';
+	return '<h3>' . 'Vielen Dank für deine Anfrage.<br />Wir beantworten jede Anfrage innerhalb weniger Stunden. Solltest du dennoch nach 1 Tag keine Antwort von uns erhalten, schau bitte in deinem Spam-Ordner nach.<br />Besonders bei Web.de und GMX-Mailadressen landen wir leider häufig im Spam-Ordner. ' . '</h3>';
 }
 add_filter( 'grunion_contact_form_success_message', 'change_grunion_success_message' );
