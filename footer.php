@@ -27,10 +27,13 @@
 			<a href="//gruseltour-leipzig.de/datenschutz">Datenschutz</a>
 			<br />
 			Gruseltour Leipzig made with <i class="fa fa-inverse fa-heart"></i>, <i class="fa fa-inverse fa-coffee"></i> and lots of Open Source in Leipzig.
+			<br />
+			<span class="pagespeed">Generiert mit <?php echo get_num_queries(); ?> Queries in <?php timer_stop(1); ?> Sekunden.</span>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
+
 </body>
 </html>
