@@ -1,18 +1,19 @@
 'use strict';
 (function (gruseltourApp) {
-	gruseltourApp.init = function () {
-	  	var dataProvider = gruseltourApp.produceDataProvider(), 
-	  		dateChecker = gruseltourApp.produceDateChecker(dataProvider);
+	gruseltourApp.init = function (useDummyData) {
+		useDummyData = useDummyData || false;
+	  	var dataProvider = gruseltourApp.dataProvider(useDummyData), 
+	  		dateChecker = gruseltourApp.dateChecker(dataProvider);
 
 	  	// get the 2nd inputfield
-	  	var datepickerInjectionPoint = jQuery('#contact-form-18 input.text').eq(1); 
-		if (!datepickerInjectionPoint.length) {
+	  	var $datepickerInjectionPoint = jQuery('#contact-form-18 input.text').eq(1); 
+		if (!$datepickerInjectionPoint.length) {
 			console.log('Could not find injection point for the datepicker.');
 			return;
 		}
 
 		// inject the datepicker
-	    datepickerInjectionPoint.datepicker({
+	    $datepickerInjectionPoint.datepicker({
 	    	// minDate: today
 			minDate: 0,
 			// is this day already fully booked ?
@@ -23,12 +24,12 @@
 		var setReadonlyFlag = (function (element) {
 			element.addClass('readonly');
 			element.prop('readonly', true);
-		}(datepickerInjectionPoint));
+		}($datepickerInjectionPoint));
 	};
 
 	// augment the jQuery Datepicker with a footer
 	gruseltourApp.renderFooterOnDatepicker = function () {
-		var htmlEntities = gruseltourApp.produceHTMLEntities();
+		var htmlEntities = gruseltourApp.tourHTMLEntities();
 
 		jQuery.extend(jQuery.datepicker, {
 			_generateHTMLOriginal: jQuery.datepicker._generateHTML,
@@ -63,7 +64,9 @@
 			},
 
 			_generateHTML: function (inst) {
-				var legendOptions = [htmlEntities.getDisabledObject()];
+				var legendOptions = [];
+				legendOptions.push(htmlEntities.disabled);
+
 				var footerHTML = this.generateFooter(legendOptions);
 	    		return this._generateHTMLOriginal(inst) + footerHTML;
 			}
@@ -74,6 +77,9 @@
 
 // Only include at end of main application...
 jQuery(document).ready(function () {
-	window.gruseltourApp.init();
+
+	// only set dummyData for testing
+	window.gruseltourApp.init(true);
+	
 	window.gruseltourApp.renderFooterOnDatepicker();
 });
