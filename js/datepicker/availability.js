@@ -1,7 +1,8 @@
 'use strict';
 (function (gruseltourApp) {
-    gruseltourApp.produceDateHelper = function () {
+    gruseltourApp.dateHelper = function () {
         var DATE_FRIDAY = 5, DATE_SATURDAY = 6, DATE_SUNDAY = 0;
+        
         return {
             isDisabled: function(date, disabledDates) {
                 var germanDateString = gruseltourApp.util.toGermanDateString(date);
@@ -21,32 +22,28 @@
         };
     };
 
-    gruseltourApp.produceHTMLEntities = function () {
+    gruseltourApp.tourHTMLEntities = function () {
         return {
-            getDisabledObject: function () {
-                return {
-                    title: 'Ausgebucht',
-                    tooltip: 'Die Tour ist an diesem Tag schon ausgebucht.',
-                    style: 'full'
-                };
+            disabled: {
+                title: 'Ausgebucht',
+                tooltip: 'Die Tour ist an diesem Tag schon ausgebucht.',
+                style: 'full'
             },
 
-            getNoRegularTourObject: function () {
-                return {
-                    title: 'Nicht verfügbar',
-                    tooltip: 'An diesem Tag findet keine reguläre Tour statt.',
-                    style: 'not-available'
-                };
+            noRegularTour: {
+                title: 'Nicht verfügbar',
+                tooltip: 'An diesem Tag findet keine reguläre Tour statt.',
+                style: 'not-available'
             }
         };
     };
 
-    gruseltourApp.produceDateChecker = function (dataProvider) {
+    gruseltourApp.dateChecker = function (dataProvider) {
         var disabledDates = dataProvider.getData(),
-            dateHelper = gruseltourApp.produceDateHelper(),
-            htmlEntities = gruseltourApp.produceHTMLEntities(),
-            noRegularTour = htmlEntities.getNoRegularTourObject(),
-            disabledTour = htmlEntities.getDisabledObject();
+            dateHelper = gruseltourApp.dateHelper(),
+            htmlEntities = gruseltourApp.tourHTMLEntities(),
+            noRegularTour = htmlEntities.noRegularTour,
+            disabledTour = htmlEntities.disabled;
 
         return {
             isAvailable: function (date) {
