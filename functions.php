@@ -75,13 +75,13 @@ function hide_form_values_scripts() {
     }
 
     // Enqueue a script that has both jQuery (automatically registered by WordPress)
-    wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'), true);
+    wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'));
 }
 add_action('wp_footer', 'hide_form_values_scripts');
 
 function load_gruseltour_styles() {
-    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/twentytwelve-dark.css', false, '1.0.0');
-    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/gruseltour.css', false, '1.0.0');
+    wp_enqueue_style('child-style', get_stylesheet_directory_uri() . '/css/twentytwelve-dark.css');
+    wp_enqueue_style('theme-style', get_stylesheet_directory_uri() . '/css/gruseltour.css');
 }
 add_action('wp_enqueue_scripts', 'load_gruseltour_styles');
 
@@ -92,9 +92,8 @@ function load_jquery_ui_style_and_i18n() {
     }
 
     wp_enqueue_style('jquery-ui-style', '//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css', ('jquery'), '1.11.4');
-    wp_enqueue_style('datepicker-style', get_stylesheet_directory_uri() . '/css/datepicker.css', false, '1.0.0');
-
-    wp_enqueue_script('jquery-ui-i18n-de', '//github.com/jquery/jquery-ui/raw/master/ui/i18n/datepicker-de.js', ('jquery'), '1.11.4', true);
+    wp_enqueue_style('datepicker-style', get_stylesheet_directory_uri() . '/css/datepicker.css');
+    wp_enqueue_script('jquery-ui-i18n-de', '//github.com/jquery/jquery-ui/raw/master/ui/i18n/datepicker-de.js', ('jquery'));
 }
 add_action('wp_enqueue_scripts', 'load_jquery_ui_style_and_i18n');
 
