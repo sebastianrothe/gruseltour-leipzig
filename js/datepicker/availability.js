@@ -1,8 +1,9 @@
-'use strict';
-(function (gruseltourApp) {
+(function(gruseltourApp) {
+    'use strict';
+
     gruseltourApp.dateHelper = function () {
         var DATE_FRIDAY = 5, DATE_SATURDAY = 6, DATE_SUNDAY = 0;
-        
+
         return {
             isDisabled: function(date, disabledDates) {
                 var germanDateString = gruseltourApp.util.toGermanDateString(date);
@@ -10,7 +11,7 @@
             },
 
             // weekend includes friday
-            isWeekend: function(date) { 
+            isWeekend: function(date) {
                 var day = date.getDay();
                 return day === DATE_FRIDAY || day === DATE_SATURDAY || day === DATE_SUNDAY;
             },

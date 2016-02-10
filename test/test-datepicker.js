@@ -1,6 +1,8 @@
+(function() {
 "use strict";
-var Util = window.gruseltourApp.Util;
-var helper = window.gruseltourApp.dateHelper();
+
+var Util = window.gruseltourApp.Util,
+    helper = window.gruseltourApp.dateHelper();
 
 QUnit.test("testToGermanDateString", function(assert) {
 	assert.notEqual(Util.toGermanDateString(new Date(2014, 0, 1)), "1.1.2014");
@@ -98,3 +100,4 @@ QUnit.test("testFunctionReadAndCleanRealData", function(assert) {
 		done();
 	});
 });
+}());

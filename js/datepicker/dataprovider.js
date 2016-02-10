@@ -1,5 +1,7 @@
-'use strict';
+// Module Pattern via http://www.adequatelygood.com/JavaScript-Module-Pattern-In-Depth.html and http://www.codeproject.com/Articles/247241/Javascript-Module-Pattern
 (function (gruseltourApp) {
+    'use strict';
+
 	gruseltourApp.dataProvider = function (useDummyData) {
 		// we will store our days here
 		var disabledTourDays;
@@ -11,7 +13,7 @@
 		var loadDummyData = function loadDummyData () {
 			parseAndSetData('19.2.2016');
 		};
-		
+
 		var load = (function (useDummyData) {
 			if (useDummyData) {
 				loadDummyData();

@@ -1,12 +1,13 @@
-'use strict';
 (function (gruseltourApp) {
+    'use strict';
+
 	gruseltourApp.init = function (useDummyData) {
 		useDummyData = useDummyData || false;
-	  	var dataProvider = gruseltourApp.dataProvider(useDummyData), 
+	  	var dataProvider = gruseltourApp.dataProvider(useDummyData),
 	  		dateChecker = gruseltourApp.dateChecker(dataProvider);
 
 	  	// get the 2nd inputfield
-	  	var $datepickerInjectionPoint = jQuery('#contact-form-18 input.text').eq(1); 
+	  	var $datepickerInjectionPoint = jQuery('#contact-form-18 input.text').eq(1);
 		if (!$datepickerInjectionPoint.length) {
 			console.log('Could not find injection point for the datepicker.');
 			return;
@@ -44,7 +45,7 @@
 
 				// validate argument
 				legendOptions = legendOptions || [];
-				
+
 				// go through legendOptions and map properties to html code
 				var length = legendOptions.length;
 				if (length) {
@@ -54,11 +55,11 @@
 						// class=color will always be assigned
 						items[i] = '<li><div class="color {0}" /><div>{1}</div></li>'.format(legend.style, legend.title);
 					}
-					html += '<ul class="legend">' + items.join('') + '</ul>' + 
+					html += '<ul class="legend">' + items.join('') + '</ul>' +
 							'<hr class="clear" />';
 				}
 
-				html += '<div class="lastRefreshDate">{0} {1}</div>'.format(TEXT_LAST_REFRESHED, TEXT_LAST_REFRESHED_TIME) + 
+				html += '<div class="lastRefreshDate">{0} {1}</div>'.format(TEXT_LAST_REFRESHED, TEXT_LAST_REFRESHED_TIME) +
 						'</div>';
 				return html;
 			},
@@ -73,13 +74,14 @@
 		});
 	};
 // create global namespace and run it
-}(window.gruseltourApp = window.gruseltourApp || {})); 
+}(window.gruseltourApp = window.gruseltourApp || {}));
 
 // Only include at end of main application...
 jQuery(document).ready(function () {
+    'use strict';
 
 	// only set dummyData for testing
 	window.gruseltourApp.init(true);
-	
+
 	window.gruseltourApp.renderFooterOnDatepicker();
 });
