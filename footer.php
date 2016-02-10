@@ -12,9 +12,9 @@
 ?>
 		<!-- Buchen Button -->
 		<?php if (!isPageWithForm()) { ?>
-		<div class="buchen-div" onclick="jQuery('#booknow-button').click();">
-			<a id="booknow-button" class="buchen-button" href="//gruseltour-leipzig.de/anmeldung">Gruseltour hier buchen!</a>
-		</div>
+		<a class="booknow-border" href="//gruseltour-leipzig.de/anmeldung">
+			<span class="booknow-text">Gruseltour hier buchen!</span>
+		</a>
 		<?php } ?>
 	</div><!-- #main .wrapper -->
 
