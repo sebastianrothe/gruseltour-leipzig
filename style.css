@@ -1,13 +1,53 @@
 /*
- Theme Name:   Gruseltour Leipzig
- Theme URI:    https://github.com/sebastianrothe/gruseltour-leipzig
- Description:  The Gruseltour Leipzig Theme based on http://zeaks.org/ Twenty Twelve Dark.
- Author:       Sebastian
- Author URI:   http://gruseltour-leipzig.de
- Template:     twentytwelve
- Version:      1.0.0
- License:      GNU General Public License v2 or later
- License URI:  http://www.gnu.org/licenses/gpl-2.0.html
- Tags:         dark, responsive-layout, accessibility-ready
- Text Domain:  gruseltour-leipzig
+Theme Name: Gruseltour Leipzig Theme
+Theme URI: http://gruseltour-leipzig.de
+Description: The Gruseltour Leipzig theme based on http://zeaks.org/ Twenty Twelve Dark.
+Author: Sebastian
+Author url: http://gruseltour-leipzig.de
+Version: 0.1 2015-03-23 00:51
+Tags: gruseltour, black, blue, white, fixed-width, custom-header, theme-options
+Template: twentytwelve
 */
+html {
+  font-size: 100%;
+}
+
+body {
+  font-size: 18px;
+  font-size: 1rem;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+}
+
+/* Team Page */
+.teamMemberImage {
+  margin-top: 0 !important;
+}
+
+.teamMemberTitle {
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+
+.teamMemberText {
+  text-align: justify;
+}
+
+/* the paragraph with the new image should clear the float from the left floating image */
+.teamMemberText + p {
+  clear: left;
+  padding-top: 20px;
+  margin-bottom: 0;
+}
+
+/* this is a paragraph just to clear the float, which should not be visible */
+.teamMemberImageBreakLine {
+  clear: left;
+  visibility: hidden;
+  margin-bottom: 0 !important;
+}
+
+/* Images */
+.alignleft,
+.wp-caption.alignleft {
+  margin-top: 0 !important;
+}
