@@ -18,6 +18,12 @@ body {
   font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen,Ubuntu,Cantarell,"Fira Sans","Droid Sans","Helvetica Neue",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
 }
 
+/* Form buttons */
+.contact-form .contact-submit button[type='submit'] {
+  background-color: #fff;
+  color: rgba(0, 0, 0, 0.847);
+}
+
 /* Team Page */
 .teamMemberImage {
   margin-top: 0 !important;
