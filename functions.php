@@ -69,7 +69,7 @@ add_action('wp_enqueue_scripts', 'hide_form_values_scripts');
 function hide_form_values_scripts()
 {
     // Let's enqueue a script only to be used on a specific page of the site
-    if (is_page('anmeldung') || is_page('wir-erwarten-euch-an-halloween-2015') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein') || is_page('wgt-2016') || is_page('friedhofstour') || is_page('wgt-2017') || is_page('halloween-2017') || is_page('halloween-2018')) {
+    if (is_page('anmeldung') || is_page('wir-erwarten-euch-an-halloween-2015') || is_page('wave-gotik-treffen-2015-wgt') || is_page('geschenkgutschein') || is_page('wgt-2016') || is_page('friedhofstour') || is_page('wgt-2017') || is_page('halloween-2017') || is_page('halloween-2018') || is_page('wgt-2019')) {
         // Enqueue a script that has both jQuery (automatically registered by WordPress)
         wp_enqueue_script('hide-form-values-script', get_stylesheet_directory_uri() . '/js/hide-form-values.js', array('jquery'), false, true);
     }
@@ -100,6 +100,10 @@ function update_jquery_ui(){
 add_action('wp_enqueue_scripts', 'load_font_awesome');
 function load_font_awesome()
 {
+    if (!is_front_page() || !is_home() ) {
+        return;
+    }
+
     //wp_enqueue_script('font-awesome', '//use.fontawesome.com/b3e50273fc.js', false, false, true);
     wp_enqueue_script('font-awesome', 'https://use.fontawesome.com/30e90113a0.js', false, '4.7.0', true);
 }
