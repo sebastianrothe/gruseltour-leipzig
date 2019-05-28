@@ -94,13 +94,17 @@ function update_jquery_ui(){
 	wp_enqueue_script('jquery-ui');
 }
 
+function is_blog() {
+    return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
+}
+
 /**
  * Font Awesome hinzufügen (Icons)
  */
 add_action('wp_enqueue_scripts', 'load_font_awesome');
 function load_font_awesome()
 {
-    if (!is_front_page() || !is_home() ) {
+    if (!is_blog()) {
         return;
     }
 
