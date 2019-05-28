@@ -88,9 +88,9 @@ function load_jquery_ui()
 }
 
 add_action('wp_enqueue_scripts', 'update_jquery_ui');
-function update_jquery(){
+function update_jquery_ui(){
     wp_deregister_script('jquery-ui');
-    wp_register_script('jquery-ui', ("https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"), ['jquery'], '1.12.1', true);
+    wp_register_script('jquery-ui', "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js", ['jquery'], '1.12.1', true);
 	wp_enqueue_script('jquery-ui');
 }
 
@@ -119,7 +119,6 @@ function change_grunion_success_message($msg)
     return '<h3>' . 'Vielen Dank für deine Anfrage. Wir beantworten sie innerhalb weniger Stunden.<br />Solltest du dennoch nach einem Tag keine Antwort von uns erhalten, schau bitte in deinem Spam-Ordner nach. Besonders bei Web.de und GMX-Mailadressen landen wir leider häufig im Spam-Ordner. ' . '</h3>';
 }
 
-
 add_action('wp_enqueue_scripts', 'update_jquery');
 function update_jquery(){
     wp_deregister_script('jquery');
@@ -130,7 +129,7 @@ function update_jquery(){
 add_action('wp_enqueue_scripts', 'update_jquery_migrate');
 function update_jquery_migrate(){
     wp_deregister_script('jquery-migrate');
-    wp_register_script('jquery-migrate', ("https://code.jquery.com/jquery-migrate-3.0.1.min.js"), 'jquery', '3.0.1', true);
+    wp_register_script('jquery-migrate', ("https://code.jquery.com/jquery-migrate-3.0.1.min.js"), ['jquery'], '3.0.1', true);
 	wp_enqueue_script('jquery-migrate');
 }
 
