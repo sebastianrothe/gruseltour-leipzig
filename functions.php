@@ -141,6 +141,11 @@ function update_jquery_migrate(){
 	wp_enqueue_script('jquery-migrate');
 }
 
+add_filter('autoptimize_filter_extra_gfont_fontstring','add_display');
+function add_display($in) {
+  return $in.'&amp;display=auto';
+}
+
 //add_action('template_redirect', 'optimize_jquery');
 function optimize_jquery()
 {
