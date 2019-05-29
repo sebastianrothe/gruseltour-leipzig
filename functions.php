@@ -90,6 +90,11 @@ function load_jquery_ui()
 add_action('wp_enqueue_scripts', 'update_jquery_ui');
 function update_jquery_ui(){
     wp_deregister_script('jquery-ui');
+
+    if (!is_page('anmeldung')) {
+        return;
+    }
+    
     wp_register_script('jquery-ui', "https://code.jquery.com/ui/1.12.1/jquery-ui.min.js", ['jquery'], '1.12.1', true);
 	wp_enqueue_script('jquery-ui');
 }
