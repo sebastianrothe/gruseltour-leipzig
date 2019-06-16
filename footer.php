@@ -63,6 +63,7 @@
 
 <?php if (is_page('bewertungen')) {?>
 	<script async src="https://www.jscache.com/wejs?wtype=cdsratingsonlynarrow&amp;uniq=517&amp;locationId=7319866&amp;lang=de&amp;border=false&amp;shadow=false&amp;backgroundColor=gray&amp;display_version=2" data-loadtrk onload="this.loadtrk=true" data-cfasync="false"></script>
+	<script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=578&amp;locationId=7319866&amp;lang=de&amp;year=2019&amp;display_version=2" data-loadtrk onload="this.loadtrk=true"></script>
 	<script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=233&amp;locationId=7319866&amp;lang=de&amp;year=2018&amp;display_version=2" data-loadtrk onload="this.loadtrk=true" data-cfasync="false"></script>
 	<script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=551&amp;locationId=7319866&amp;lang=de&amp;year=2017&amp;display_version=2" data-loadtrk onload="this.loadtrk=true" data-cfasync="false"></script>
 	<script async src="https://www.jscache.com/wejs?wtype=certificateOfExcellence&amp;uniq=440&amp;locationId=7319866&amp;lang=de&amp;year=2016&amp;display_version=2" data-loadtrk onload="this.loadtrk=true" data-cfasync="false"></script>
