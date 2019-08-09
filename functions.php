@@ -84,7 +84,7 @@ function load_jquery_ui()
         return;
     }
 
-    wp_enqueue_style('jquery-style', 'https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/ui-darkness/jquery-ui.css', false, '1.12.1');
+    wp_enqueue_style('jquery-style', 'https://ajax.aspnetcdn.com/ajax/jquery.ui/1.12.1/themes/smoothness/jquery-ui.css', false, '1.12.1');
 }
 
 add_action('wp_enqueue_scripts', 'update_jquery_ui');
