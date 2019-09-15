@@ -15,7 +15,7 @@
 		<!-- Telefon Button -->
 
 		<!-- Buchen Button -->
-		<?php if (!is_page('anmeldung') && !is_page('wir-erwarten-euch-an-halloween-2015') && !is_page('elite-gruseltour') && !is_page('wave-gotik-treffen-2015-wgt') && !is_page('wgt-2016') && !is_page('friedhofstour') && !is_page('english-guided-city-tour') && !is_page('wgt-2017') && !is_page('wgt-2018') && !is_page('halloween-2017') && !is_page('walpurgisnacht-2018') && !is_page('halloween-2018') && !is_page('wgt-2019')) {?>
+		<?php if (!is_page('anmeldung') && !is_page('wir-erwarten-euch-an-halloween-2015') && !is_page('elite-gruseltour') && !is_page('wave-gotik-treffen-2015-wgt') && !is_page('wgt-2016') && !is_page('friedhofstour') && !is_page('english-guided-city-tour') && !is_page('wgt-2017') && !is_page('wgt-2018') && !is_page('halloween-2017') && !is_page('walpurgisnacht-2018') && !is_page('halloween-2018')&& !is_page('walpurgisnacht-2019') && !is_page('wgt-2019') && !is_page('halloween-2019')) {?>
 		<div class="buchen-div">
 			<a class="buchen-button" href="//gruseltour-leipzig.de/anmeldung">Gruseltour hier buchen!</a>
 		</div>
@@ -26,7 +26,7 @@
 		<p class="site-info">
 			<a href="//gruseltour-leipzig.de/bewertungen/">Bewertungen</a>
 			&nbsp;-&nbsp;
-			<a href="//gruseltour-leipzig.de/treffpunkt/">Treffpunkt</a>
+			<a href="//gruseltour-leipzig.de/treffpunkt/">Treffpunkt Gruseltour</a>
 			&nbsp;-&nbsp;
 			<a href="//gruseltour-leipzig.de/datenschutz/">Datenschutz</a>
             &nbsp;-&nbsp;
