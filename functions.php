@@ -135,14 +135,14 @@ function change_grunion_success_message($msg)
 add_action('wp_enqueue_scripts', 'update_jquery');
 function update_jquery(){
     wp_deregister_script('jquery');
-    wp_register_script('jquery', ("https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"), false, '3.4.1', true);
+    wp_register_script('jquery', ("https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.5.0.min.js"), false, '3.5.0', true);
 	wp_enqueue_script('jquery');
 }
 
 add_action('wp_enqueue_scripts', 'update_jquery_migrate');
 function update_jquery_migrate(){
     wp_deregister_script('jquery-migrate');
-    wp_register_script('jquery-migrate', ("https://ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-3.0.0.min.js"), ['jquery'], '3.0.0', true);
+    wp_register_script('jquery-migrate', ("https://ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-3.2.0.min.js"), ['jquery'], '3.2.0', true);
 	wp_enqueue_script('jquery-migrate');
 }
 
