@@ -45,7 +45,7 @@
 		
 		<!-- switch header and nav -->
 		<?php if ( get_header_image() ) : ?>
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="//res.cloudinary.com/gruseltourleipzig/image/upload/q_auto/f_auto/v1508406596/cropped-cropped-grusel-poster-a3-e1480026424555-1_cgpp1f.jpg" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="//res.cloudinary.com/gruseltourleipzig/image/upload/q_auto/f_auto/v1508406596/cropped-grusel-poster-a3-e1480026424555_bjc6d4.jpg" class="header-image" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 		<?php endif; ?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation">
