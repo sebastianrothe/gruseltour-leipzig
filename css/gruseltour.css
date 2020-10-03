@@ -47,9 +47,15 @@
 }
 
 /* vorher 960px und 68.571428571rem */
-@media screen and (min-width: 600px) {
+/*@media screen and (min-width: 600px) {
   .site {
     max-width: 80.571428571rem !important;
+  }
+}*/
+
+@media screen and (min-width: 960px) {
+  .site {
+    max-width: 68.571428571rem !important;
   }
 }
 
@@ -83,22 +89,19 @@ form input {
   background-color: #fdfdfd;
   bottom: 0;
   right: 0;
-  padding-right: 10px;
-  padding-bottom: 10px;
-  padding-top: 10px;
-  padding-left: 12px;
+  padding: 10px 10px 10px 12px;
   border-radius: 2px 0 0 2px;
   -moz-border-radius: 2px 0 0 2px;
   -webkit-border-radius: 2px 0 0 2px;
+  box-shadow: 0 0 5px #fff;
   -moz-box-shadow: 0 0 5px #fff;
   -webkit-box-shadow: 0 0 5px#fff;
-  box-shadow: 0 0 5px #fff;
 }
 
 .buchen-div:hover {
+  box-shadow: 0 0 20px #fff;
   -moz-box-shadow: 0 0 20px #fff;
   -webkit-box-shadow: 0 0 20px#fff;
-  box-shadow: 0 0 20px #fff;
   padding-top: 10px;
 }
 
@@ -171,7 +174,7 @@ form input {
 
 #slideshow figcaption.active {
   z-index: 11;
-  opacity: .5;
+  opacity: 0.5;
 }
 
 #slideshow figcaption.last-active {
