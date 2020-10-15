@@ -129,7 +129,7 @@ function bwp_gxs_exclude_posts($excluded_posts, $post_type)
 add_filter('grunion_contact_form_success_message', 'change_grunion_success_message');
 function change_grunion_success_message($msg)
 {
-    return '<h3>' . 'Vielen Dank für deine Anfrage. Wir beantworten sie innerhalb weniger Stunden.<br />Solltest du dennoch nach einem Tag keine Antwort von uns erhalten, schau bitte in deinem Spam-Ordner nach. Besonders bei Web.de und GMX-Mailadressen landen wir leider häufig im Spam-Ordner. ' . '</h3>';
+    return '<h3>' . 'Vielen Dank für deine Anfrage. Wir beantworten sie innerhalb weniger Stunden.<br />Solltest du dennoch nach einem Tag keine Antwort von uns erhalten, schau bitte in deinem Spam-Ordner nach. Besonders bei Web.de, Yahoo und GMX-Mailadressen landen wir leider häufig im Spam-Ordner. ' . '</h3>';
 }
 
 add_action('wp_enqueue_scripts', 'update_jquery');
@@ -142,7 +142,7 @@ function update_jquery(){
 add_action('wp_enqueue_scripts', 'update_jquery_migrate');
 function update_jquery_migrate(){
     wp_deregister_script('jquery-migrate');
-    wp_register_script('jquery-migrate', ("https://ajax.aspnetcdn.com/ajax/jquery.migrate/jquery-migrate-3.3.0.min.js"), ['jquery'], '3.3.0', true);
+    wp_register_script('jquery-migrate', ("https://cdnjs.cloudflare.com/ajax/libs/jquery-migrate/3.3.1/jquery-migrate.min.js"), ['jquery'], '3.3.1', true);
 	wp_enqueue_script('jquery-migrate');
 }
 
