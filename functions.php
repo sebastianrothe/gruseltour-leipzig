@@ -150,3 +150,57 @@ add_filter('autoptimize_filter_extra_gfont_fontstring','add_display');
 function add_display($in) {
   return $in.'&amp;display=auto';
 }
+
+add_action('wp_enqueue_scripts', 'remove_cloudinary_videoplayer');
+function remove_cloudinary_videoplayer() {
+    wp_deregister_style('cld-player');
+    wp_dequeue_style('cld-player');
+
+    wp_deregister_script('cld-video-init');
+    wp_dequeue_script('cld-video-init');
+
+    wp_deregister_script('cld-player');
+    wp_dequeue_script('cld-player');
+}
+
+add_action('wp_head', 'remove_cloudinary_gallery');
+add_action('wp_enqueue_scripts', 'remove_cloudinary_gallery');
+function remove_cloudinary_gallery() {
+    wp_deregister_style('cloudinary-gallery-block-css');
+    wp_dequeue_style('cloudinary-gallery-block-css');
+
+    wp_deregister_script('cloudinary-gallery-block-js');
+    wp_deregister_script('cloudinary-gallery-init');
+    wp_deregister_script('cld-gallery');
+    wp_deregister_script('cld-gallery-js');
+
+    wp_dequeue_script('cloudinary-gallery-block-js');
+    wp_dequeue_script('cloudinary-gallery-init');
+    wp_dequeue_script('cld-gallery');
+    wp_dequeue_script('cld-gallery-js');
+}
+
+function test_print_scripts_styles() {
+    $result = [];
+    $result['scripts'] = [];
+    $result['styles'] = [];
+
+    // Print all loaded Scripts
+    global $wp_scripts;
+    foreach( $wp_scripts->queue as $script ) :
+       $result['scripts'][] =  $wp_scripts->registered[$script]->src . ";";
+    endforeach;
+
+    // Print all loaded Styles (CSS)
+    global $wp_styles;
+    foreach( $wp_styles->queue as $style ) :
+       $result['styles'][] =  $wp_styles->registered[$style]->src . ";";
+    endforeach;
+
+    return $result;
+}
+
+//add_action( 'wp_head', 'gt_process_list');
+function gt_process_list() {
+    print_r( test_print_scripts_styles() );
+}
